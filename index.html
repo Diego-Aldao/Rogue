@@ -3,21 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--SWIPER-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
+    <!--FONTAWESOME-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+    />
+    <!--LOCALES-->
     <link rel="stylesheet" href="css/styles.css" />
     <title>eCommerce</title>
   </head>
   <body>
     <nav class="nav-principal">
-      <div class="superior">
-        <div class="idioma"></div>
+      <div class="superior contenedor">
+        <div class="idioma">idioma</div>
         <div class="login">
+          <i class="far fa-user"></i>
           <p>ingresar</p>
           /
           <p>registrarse</p>
         </div>
       </div>
-      <div class="nav-inferior">
-        <div class="logo"></div>
+      <div class="nav-inferior contenedor">
+        <div class="logo">logo</div>
+        <div class="menu-oculto">
+          <ul class="contenedor-link">
+            <li class="links"><a class="current" href="#">inicio</a></li>
+            <li class="links"><a href="#">mujeres</a></li>
+            <li class="links"><a href="#">hombres</a></li>
+            <li class="links"><a href="#">lo ultimo</a></li>
+            <li class="links"><a href="#">descuentos</a></li>
+          </ul>
+        </div>
+
+        <div class="cart oculto">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <div class="buscar oculto">
+          <i class="fas fa-search"></i>
+        </div>
+        <div class="favorito oculto">
+          <i class="far fa-heart"></i>
+        </div>
         <div class="menu-hamburguesa">
           <span class="punto-menu"></span>
           <span class="punto-menu"></span>
@@ -29,51 +58,56 @@
           <span class="punto-menu"></span>
           <span class="punto-menu"></span>
         </div>
-        <div class="favorito">
-          <i>C</i>
-        </div>
-        <div class="buscar">
-          <i>S</i>
-        </div>
-        <div class="menu-oculto">
-          <ul class="contenedor-link">
-            <li class="links"><a href="#">inicio</a></li>
-            <li class="links"><a href="#">mujeres</a></li>
-            <li class="links"><a href="#">hombres</a></li>
-            <li class="links"><a href="#">lo ultimo</a></li>
-            <li class="links"><a href="#">descuentos</a></li>
-          </ul>
-        </div>
       </div>
     </nav>
-    <header class="header-principal">
-      <div class="contenedor-header">
-        <div class="contenedor-texto">
-          <p class="mini-texto">
-            Nuevos Productos
-          </p>
-          <h1 class="titulos-principales">
-            coleccion primavera-verano 2020
-          </h1>
-          <button class="btn-principal">
-            comprar
-          </button>
+    <header class="swiper-container header-principal">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide contenedor-header">
+          <div class="contenedor-texto">
+            <p class="mini-texto">
+              Nuevos Productos
+            </p>
+            <h1 class="titulos-principales">
+              otoño &#38; <br />
+              invierno 2020
+            </h1>
+            <button class="btn-principal">
+              comprar
+            </button>
+          </div>
+        </div>
+        <div class="swiper-slide contenedor-header">
+          <div class="contenedor-texto">
+            <p class="mini-texto">
+              Tienda Skylink
+            </p>
+            <h1 class="titulos-principales">
+              precios insuperables
+            </h1>
+            <button class="btn-principal">
+              comprar
+            </button>
+          </div>
+        </div>
+        <div class="swiper-slide contenedor-header">
+          <div class="contenedor-texto">
+            <p class="mini-texto">
+              tienda skylink
+            </p>
+            <h1 class="titulos-principales">
+              primavera &#38; verano 2020
+            </h1>
+            <button class="btn-principal">
+              comprar
+            </button>
+          </div>
         </div>
       </div>
-      <div class="contenedor-header">
-        <div class="contenedor-texto">
-          <p class="mini-texto"></p>
-          <h1 class="titulos-principales"></h1>
-          <button class="btn-principal"></button>
-        </div>
-      </div>
-      <div class="contenedor-header">
-        <div class="contenedor-texto">
-          <p class="mini-texto"></p>
-          <h1 class="titulos-principales"></h1>
-          <button class="btn-principal"></button>
-        </div>
-      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination swiper-pagination-white"></div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next swiper-button-white"></div>
+      <div class="swiper-button-prev swiper-button-white"></div>
     </header>
     <section class="compras mujeres">
       <div class="hero-compras hero-mujer"></div>
@@ -143,6 +177,8 @@
       <div class="mas-visitados"></div>
       <div class="mas-visitados"></div>
     </section>
+    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
