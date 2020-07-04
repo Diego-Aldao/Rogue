@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap");
 * {
@@ -5,6 +6,8 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 body {
@@ -774,6 +777,160 @@ a:after {
   }
   .descuentos:nth-child(1) .mini-texto {
     font-size: clamp(0.8rem, 1.7vw, 1.5rem);
+  }
+}
+
+.contenedor-categorias .titulos-secundarios {
+  font-size: 1.1rem;
+  width: 180px;
+  letter-spacing: 0;
+  margin-left: 10px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.contenedor-categorias .columna-slider {
+  width: 100%;
+}
+
+.contenedor-categorias .item-slider {
+  width: 95%;
+  height: 40vw;
+  max-height: 200px;
+  margin: 15px auto 0 10px;
+  padding: 0;
+  max-width: 500px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contenedor-categorias .swiper-button-next,
+.contenedor-categorias .swiper-button-next:after,
+.contenedor-categorias .swiper-button-prev:after,
+.contenedor-categorias .swiper-button-prev {
+  color: black;
+  font-size: 1.1rem;
+  top: 35px;
+  margin-top: 0;
+  right: 35px;
+  margin-left: auto;
+}
+
+.contenedor-categorias .swiper-button-prev {
+  right: 70px;
+}
+
+.mas-vendidos,
+.mejores-reseñas,
+.nuevos-productos {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.img-productos-categorias {
+  width: 30%;
+  height: 100%;
+  background: #dbdbdb;
+}
+
+.descripcion-productos-categorias {
+  width: 66%;
+  margin-left: auto;
+  height: 100%;
+  padding-top: 0px;
+}
+
+.nombre-producto-categorias {
+  width: 100%;
+  height: 28%;
+  font-family: var(--fuente-principal);
+  font-weight: 100;
+  font-size: 1.1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.calificacion-producto-categorias {
+  width: 100%;
+  height: 28%;
+  color: #ff9c00;
+  font-size: 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.precio-producto-categorias {
+  width: 100%;
+  height: 28%;
+  font-family: var(--fuente-principal);
+  font-weight: 100;
+  font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 850px) {
+  .contenedor-categorias {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .contenedor-categorias .item-slider {
+    height: 12vw;
+    margin-bottom: 30px;
+  }
+  .nuevos-productos,
+  .mejores-reseñas,
+  .mas-vendidos {
+    width: 33.33333333%;
   }
 }
 /*# sourceMappingURL=styles.css.map */

@@ -4,7 +4,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
 }
+//estrella vacia <i class="far fa-star"></i> //
 
 //GLOBALES
 body {
@@ -525,5 +527,102 @@ a:after {
     .mini-texto {
       font-size: clamp(0.8rem, 1.7vw, 1.5rem);
     }
+  }
+}
+
+//INICIO SECCION CATEGORIAS
+.contenedor-categorias {
+  .titulos-secundarios {
+    font-size: 1.1rem;
+    width: 180px;
+    letter-spacing: 0;
+    margin-left: 10px;
+    justify-content: flex-start;
+  }
+  .columna-slider {
+    width: 100%;
+  }
+  .item-slider {
+    width: 95%;
+    height: 40vw;
+    max-height: 200px;
+    margin: 15px auto 0 10px;
+    padding: 0;
+    max-width: 500px;
+    box-shadow: none;
+    @include flexbox(row, center, center);
+  }
+  .swiper-button-next,
+  .swiper-button-next:after,
+  .swiper-button-prev:after,
+  .swiper-button-prev {
+    color: black;
+    font-size: 1.1rem;
+    top: 35px;
+    margin-top: 0;
+    right: 35px;
+    margin-left: auto;
+  }
+  .swiper-button-prev {
+    right: 70px;
+  }
+} //PARA REEMPLAZAR ALGUNAS PROPIEDADES DEL SWIPER ANTERIOR Y ADAPTARLO AL NUEVO
+
+.mas-vendidos,
+.mejores-reseñas,
+.nuevos-productos {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.img-productos-categorias {
+  width: 30%;
+  height: 100%;
+  background: rgb(219, 219, 219);
+}
+.descripcion-productos-categorias {
+  width: 66%;
+  margin-left: auto;
+  height: 100%;
+  padding-top: 0px;
+}
+.nombre-producto-categorias {
+  width: 100%;
+  height: 28%;
+  font-family: var(--fuente-principal);
+  font-weight: 100;
+  font-size: 1.1rem;
+  @include flexbox(row, flex-start, center);
+}
+.calificacion-producto-categorias {
+  width: 100%;
+  height: 28%;
+  color: #ff9c00;
+  font-size: 0.8rem;
+  @include flexbox(row, flex-start, center);
+}
+.precio-producto-categorias {
+  width: 100%;
+  height: 28%;
+  font-family: var(--fuente-principal);
+  font-weight: 100;
+  font-size: 1rem;
+  @include flexbox(row, flex-start, center);
+}
+
+@media (min-width: 850px) {
+  .contenedor-categorias {
+    display: flex;
+    .item-slider {
+      height: 12vw;
+      margin-bottom: 30px;
+    }
+  }
+
+  .nuevos-productos,
+  .mejores-reseñas,
+  .mas-vendidos {
+    width: 33.33333333%;
   }
 }

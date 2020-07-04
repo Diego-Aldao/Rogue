@@ -20,3 +20,12 @@ var swiper = new Swiper(".contenedor-slider", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+var swiper = new Swiper(".contenedor-slider-productos-categorias", {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
