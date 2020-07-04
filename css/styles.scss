@@ -7,6 +7,9 @@
 }
 
 //GLOBALES
+body {
+  overflow-x: hidden;
+}
 .menu-oculto {
   display: none;
 }
@@ -22,7 +25,7 @@ img {
 .contenedor {
   width: 90%;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1800px;
 }
 
 //fuentes y colores
@@ -181,7 +184,6 @@ a:after {
 }
 
 //SECCION HEADER
-
 .contenedor-header {
   width: 100%;
   height: 100%;
@@ -212,32 +214,32 @@ a:after {
   margin-bottom: 15px;
 }
 
-//SWIPER
+//SWIPER PRINCIPAL / HEADER
 .swiper-container {
   width: 100%;
   height: 400px;
   min-height: 35vw;
 }
-.swiper-slide:nth-child(1) {
+.contenedor-header:nth-child(1) {
   background: url("../images/images-slider/slider02.jpg");
   background-position: center;
   background-size: cover;
 }
-.swiper-slide:nth-child(2) {
+.contenedor-header:nth-child(2) {
   background: url("../images/images-slider/slider03.jpg");
   background-position: center;
   background-size: cover;
 }
 
-.swiper-slide:nth-child(3) {
+.contenedor-header:nth-child(3) {
   background: url("../images/images-slider/h2-new-slider3.jpg");
   background-position: center;
   background-size: cover;
 }
-.swiper-button-next,
-.swiper-button-next:after,
-.swiper-button-prev:after,
-.swiper-button-prev {
+.btn-header-next,
+.btn-header-next:after,
+.btn-header-prev:after,
+.btn-header-prev {
   color: black;
   font-size: 1.5rem;
   top: 0;
@@ -258,11 +260,128 @@ a:after {
   .contenedor-texto {
     margin-left: 120px;
   }
-  .swiper-button-next,
-  .swiper-button-next:after,
-  .swiper-button-prev:after,
-  .swiper-button-prev {
+  .btn-header-next,
+  .btn-header-next:after,
+  .btn-header-prev:after,
+  .btn-header-prev {
     top: calc(50% - 50px);
     font-size: 2rem;
+  }
+}
+
+//SECCION COMPRAS MUJERES-HOMBRES
+.compras {
+  width: 100%;
+  margin-top: 100px;
+  position: relative;
+}
+.titulos-secundarios {
+  width: 130px;
+  background: white;
+  @include flexbox(row, center, center);
+  font-family: var(--fuente-principal);
+  text-transform: capitalize;
+  margin-left: 15px;
+}
+
+.linea-separadora {
+  width: 100%;
+  height: 1px;
+  display: block;
+  margin-bottom: 15px;
+  background: rgb(199, 199, 199);
+}
+.contenido-mujer-hombre {
+  width: 95%;
+  margin: 50px auto;
+  @include flexbox(row, space-between, flex-start);
+}
+
+//seccion hombre exclusivo
+.contenido-hombre {
+  flex-direction: row-reverse;
+}
+.hero-compras {
+  width: 40%;
+  height: 650px;
+  display: none;
+  background: url("../images/NuevaC/side-view-photography-of-a-woman-wearing-fedora-1070058-removebg-preview.jpg");
+  background: rgb(255, 255, 255);
+  background-position: center;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.281);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+//MEDIA QUERYS SECCION COMPRAS MUJERES-HOMBRES
+@media (min-width: 850px) {
+  .hero-compras {
+    display: block;
+    width: 45%;
+  }
+  //seccion hombre exclusivo
+  .titulo-hombre {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+}
+
+//SWIPER COMPRAS MUJERES-HOMBRES
+.contenedor-slider {
+  @include flexbox(row, space-between, center);
+  flex-wrap: wrap;
+  width: 100%;
+  height: 650px;
+  overflow-x: hidden;
+}
+.columna-slider {
+  height: 100%;
+  @include flexbox(column, space-evenly, center);
+}
+.item-slider {
+  width: 95%;
+  max-width: 200px;
+  height: 65vw;
+  max-height: 250px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.164);
+  margin: 25px 0;
+}
+
+.btn-mujer-hombre-izq,
+.btn-mujer-hombre-der {
+  right: 60px;
+  margin-left: auto;
+  margin-top: 0;
+  color: black;
+  top: -10px;
+}
+.btn-mujer-hombre-izq:after,
+.btn-mujer-hombre-der::after {
+  font-size: 1.3rem;
+}
+.btn-mujer-hombre-der {
+  right: 20px;
+}
+
+//MEDIA QUERYS SWIPER COMPRAS MUJERES-HOMBRES
+@media (min-width: 850px) {
+  .contenedor-slider {
+    width: 51%;
+  }
+  .btn-hombre-izq,
+  .btn-hombre-der {
+    right: 0;
+    left: 25px;
+    color: black;
+    margin-left: 0;
+    margin-right: auto;
+  }
+  .btn-hombre-izq:after,
+  .btn-hombre-der::after {
+    font-size: 1.3rem;
+  }
+  .btn-hombre-der {
+    right: 0;
+    left: 65px;
   }
 }

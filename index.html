@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--SWIPER-->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <!--FONTAWESOME-->
     <link
       rel="stylesheet"
@@ -106,60 +108,82 @@
       <!-- Add Pagination -->
       <div class="swiper-pagination swiper-pagination-white"></div>
       <!-- Add Arrows -->
-      <div class="swiper-button-next swiper-button-white"></div>
-      <div class="swiper-button-prev swiper-button-white"></div>
+      <div class="swiper-button-next swiper-button-white btn-header-next"></div>
+      <div class="swiper-button-prev swiper-button-white btn-header-prev"></div>
     </header>
-    <section class="compras mujeres">
-      <div class="hero-compras hero-mujer"></div>
-      <div class="contenedor-slider contenedor-mujer">
-        <div class="columna-slider columna-mujer">
-          <div class="item-slider item-mujer"></div>
-          <div class="item-slider item-mujer"></div>
-          <div class="item-slider item-mujer"></div>
-        </div>
-        <div class="columna-slider icolumna-mujer">
-          <div class="item-slider item-mujer"></div>
-          <div class="item-slider item-mujer"></div>
-          <div class="item-slider item-mujer"></div>
-        </div>
-        <div class="columna-slider columna-mujer">
-          <div class="item-slider item-mujer"></div>
-          <div class="item-slider item-mujer"></div>
-          <div class="item-slider item-mujer"></div>
-        </div>
-        <div class="columna-slider columna-mujer">
-          <div class="item-slider item-mujer"></div>
-          <div class="item-slider item-mujer"></div>
-          <div class="item-slider item-mujer"></div>
+    <!--INICIO SECCION COMPRAS MUJER-->
+    <section class="compras">
+      <h2 class="titulos-secundarios">para ella</h2>
+      <span class="linea-separadora"></span>
+      <div class="contenido-mujer-hombre">
+        <div class="hero-compras"></div>
+        <div class="contenedor-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide columna-slider">
+              <div class="item-slider"></div>
+              <div class="item-slider"></div>
+            </div>
+            <div class="swiper-slide columna-slider">
+              <div class="item-slider"></div>
+              <div class="item-slider"></div>
+            </div>
+            <div class="swiper-slide columna-slider">
+              <div class="item-slider"></div>
+              <div class="item-slider"></div>
+            </div>
+            <div class="swiper-slide columna-slider">
+              <div class="item-slider"></div>
+              <div class="item-slider"></div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div
+            class="swiper-button-next swiper-button-white btn-mujer-hombre-der"
+          ></div>
+          <div
+            class="swiper-button-prev swiper-button-white btn-mujer-hombre-izq"
+          ></div>
         </div>
       </div>
     </section>
+    <!--INICIO SECCION DESCUENTOS/BREAK-->
     <section class="break">
       <div class="descuentos"></div>
       <div class="descuentos"></div>
     </section>
-    <section class="compras hombres">
-      <div class="hero-compras hero-hombre"></div>
-      <div class="contenedor-slider contenedor-hombre">
-        <div class="columna-slider columna-hombre">
-          <div class="item-slider item-hombre"></div>
-          <div class="item-slider item-hombre"></div>
-          <div class="item-slider item-hombre"></div>
-        </div>
-        <div class="columna-slider icolumna-hombre">
-          <div class="item-slider item-hombre"></div>
-          <div class="item-slider item-hombre"></div>
-          <div class="item-slider item-hombre"></div>
-        </div>
-        <div class="columna-slider columna-hombre">
-          <div class="item-slider item-hombre"></div>
-          <div class="item-slider item-hombre"></div>
-          <div class="item-slider item-hombre"></div>
-        </div>
-        <div class="columna-slider columna-hombre">
-          <div class="item-slider item-hombre"></div>
-          <div class="item-slider item-hombre"></div>
-          <div class="item-slider item-hombre"></div>
+    <!--INICIO SECCION COMPRAS HOMBRE-->
+    <section class="compras">
+      <h2 class="titulos-secundarios titulo-hombre">para el</h2>
+      <span class="linea-separadora"></span>
+      <div class="contenido-mujer-hombre contenido-hombre">
+        <!--AGREGADA LA CLASE CONTENIDO HOMBRE PARA PODER APLICARLE LA PROPIEDAD ROW-REVERSE-->
+        <div class="hero-compras"></div>
+        <div class="contenedor-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide columna-slider">
+              <div class="item-slider"></div>
+              <div class="item-slider"></div>
+            </div>
+            <div class="swiper-slide columna-slider">
+              <div class="item-slider"></div>
+              <div class="item-slider"></div>
+            </div>
+            <div class="swiper-slide columna-slider">
+              <div class="item-slider"></div>
+              <div class="item-slider"></div>
+            </div>
+            <div class="swiper-slide columna-slider">
+              <div class="item-slider"></div>
+              <div class="item-slider"></div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div
+            class="swiper-button-next swiper-button-white btn-hombre-der btn-mujer-hombre-der"
+          ></div>
+          <div
+            class="swiper-button-prev swiper-button-white btn-hombre-izq btn-mujer-hombre-izq"
+          ></div>
         </div>
       </div>
     </section>
@@ -177,8 +201,7 @@
       <div class="mas-visitados"></div>
       <div class="mas-visitados"></div>
     </section>
-    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
-    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
