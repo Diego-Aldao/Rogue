@@ -383,12 +383,20 @@ a:after {
 
 .compras {
   width: 100%;
-  margin-top: 100px;
+  margin: 100px 0;
   position: relative;
 }
 
+.hero-movil {
+  width: 100%;
+  height: 450px;
+  background: red;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
 .titulos-secundarios {
-  width: 130px;
+  width: 150px;
   background: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -406,6 +414,11 @@ a:after {
   font-family: var(--fuente-principal);
   text-transform: capitalize;
   margin-left: 15px;
+  margin-top: 50px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 1.8rem;
+  font-style: italic;
 }
 
 .linea-separadora {
@@ -418,7 +431,7 @@ a:after {
 
 .contenido-mujer-hombre {
   width: 95%;
-  margin: 50px auto;
+  margin: 50px auto 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -432,6 +445,7 @@ a:after {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  position: relative;
 }
 
 .contenido-hombre {
@@ -452,6 +466,50 @@ a:after {
           box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.281);
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.ver-mas {
+  width: 100%;
+  height: 40px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+}
+
+.ver-mas:after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #dddddd;
+  position: absolute;
+  z-index: -1;
+}
+
+.boton-ver-mas {
+  margin-left: auto;
+  margin-right: 85px;
+  font-family: var(--fuente-principal);
+  background: white;
+  padding: 0 15px;
+  color: var(--color-texto-principal);
+  font-weight: normal;
+}
+
+.ver-mas-hombre {
+  margin-right: auto !important;
+  margin-left: 85px;
 }
 
 @media (min-width: 850px) {
@@ -519,7 +577,7 @@ a:after {
   margin-left: auto;
   margin-top: 0;
   color: black;
-  top: -10px;
+  top: -90px;
 }
 
 .btn-mujer-hombre-izq:after,
@@ -534,6 +592,9 @@ a:after {
 @media (min-width: 850px) {
   .contenedor-slider {
     width: 51%;
+  }
+  .hero-movil {
+    display: none;
   }
   .btn-hombre-izq,
   .btn-hombre-der {
@@ -550,6 +611,169 @@ a:after {
   .btn-hombre-der {
     right: 0;
     left: 65px;
+  }
+}
+
+.break {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.descuentos {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  height: 30vw;
+  max-height: 220px;
+  min-height: 100px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #ffdbdb;
+  margin: 15px;
+}
+
+.texto-descuento {
+  width: 60%;
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.texto-descuento .mini-texto {
+  width: 100%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 0px;
+  padding: 0 0 5px 10px;
+  font-size: clamp(0.8rem, 3vw, 1.5rem);
+  text-transform: capitalize;
+}
+
+.titulos-descuentos {
+  width: 100%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-family: var(--fuente-principal);
+  padding-left: 10px;
+  font-size: clamp(1.3rem, 6.2vw, 3rem);
+  color: var(--color-texto-principal);
+}
+
+.imagen-descuento {
+  width: 25%;
+  background: red;
+  height: 90%;
+}
+
+.descuentos:nth-child(2):after {
+  content: "";
+  width: 90%;
+  height: 70%;
+  border: 1px solid white;
+  position: absolute;
+}
+
+.descuentos:nth-child(1) {
+  background: whitesmoke;
+}
+
+.descuentos:nth-child(1) .mini-texto {
+  letter-spacing: 0px;
+  padding: 0 0 0 12px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-size: clamp(0.8rem, 2.3vw, 1.5rem);
+}
+
+.descuentos:nth-child(1) .titulos-descuentos {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-left: 10px;
+}
+
+@media (min-width: 950px) {
+  .descuentos {
+    -ms-flex-preferred-size: 45%;
+        flex-basis: 45%;
+    height: 18vw;
+  }
+  .titulos-descuentos {
+    font-size: clamp(1.3rem, 4vw, 3rem);
+  }
+  .texto-descuento .mini-texto {
+    font-size: clamp(0.8rem, 2vw, 1.5rem);
+    height: 40%;
+  }
+  .descuentos:nth-child(1) .mini-texto,
+  .descuentos:nth-child(1) .titulos-descuentos {
+    padding-left: 0;
+  }
+  .descuentos:nth-child(1) .mini-texto {
+    font-size: clamp(0.8rem, 1.7vw, 1.5rem);
   }
 }
 /*# sourceMappingURL=styles.css.map */
