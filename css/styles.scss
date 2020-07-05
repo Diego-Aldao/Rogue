@@ -6,7 +6,8 @@
   box-sizing: border-box;
   transition: all 0.2s ease-in-out;
 }
-//estrella vacia <i class="far fa-star"></i> //
+/*estrella vacia <i class="far fa-star"></i>
+  estrella a la mitad llena <i class="fas fa-star-half"></i> */
 
 //GLOBALES
 body {
@@ -20,12 +21,13 @@ body {
 }
 
 img {
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
 .contenedor {
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
   max-width: 1800px;
 }
@@ -280,7 +282,6 @@ a:after {
 .hero-movil {
   width: 100%;
   height: 450px;
-  background: red;
   max-width: 350px;
   margin: 0 auto;
 }
@@ -532,6 +533,7 @@ a:after {
 
 //INICIO SECCION CATEGORIAS
 .contenedor-categorias {
+  margin-bottom: 50px;
   .titulos-secundarios {
     font-size: 1.1rem;
     width: 180px;
@@ -624,5 +626,160 @@ a:after {
   .mejores-reseñas,
   .mas-vendidos {
     width: 33.33333333%;
+  }
+}
+
+//INICIO SECCION FOOTER
+.footer-principal {
+  padding-top: 30px;
+  background: rgb(241, 241, 241);
+  .titulos-secundarios {
+    margin: 0;
+    width: 100%;
+    background: none;
+    justify-content: flex-start;
+    font-size: 1.3rem;
+    height: 40px;
+  }
+}
+.logo-redes {
+  @include flexbox(column, center, center);
+  margin-bottom: 30px;
+}
+
+.logo-footer {
+  width: 300px;
+  height: 80px;
+  @include flexbox(row, flex-start, center);
+  margin-right: auto;
+}
+.img-logo {
+  width: 60%;
+  height: 50px;
+  border: 1px solid rgb(143, 143, 143);
+  @include flexbox(column, center, center);
+}
+.redes {
+  width: 100%;
+  height: 80px;
+  @include flexbox(row, flex-start, center);
+  i {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgb(196, 196, 196);
+    margin: 10px;
+    border-radius: 50%;
+    @include flexbox(row, center, center);
+    color: var(--color-texto-secundario);
+  }
+  i:nth-child(1) {
+    margin-left: 0;
+  }
+}
+
+.newsletter {
+  width: 100%;
+  height: 100px;
+  max-width: 500px;
+  @include flexbox(row, flex-start, flex-start);
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  .titulos-secundarios {
+    margin-bottom: -20px;
+  } //para acercar mas el titulo a la seccion correspondiente
+
+  .correo-newsletter {
+    width: 58%;
+    height: 35px;
+    border: 1px solid rgb(209, 209, 209);
+    margin-right: 5px;
+  }
+  .btn-principal {
+    width: 40%;
+    font-size: 0.7rem;
+    font-weight: bolder;
+    height: 35px;
+    padding: 4px 8px;
+  }
+}
+.contacto {
+  .titulos-secundarios {
+    margin-bottom: -20px;
+  }
+  margin-bottom: 30px;
+  ul {
+    width: 100%;
+    height: 200px;
+    @include flexbox(column, space-evenly, left);
+    list-style: none;
+  }
+  li {
+    width: 100%;
+    font-family: var(--fuente-principal);
+    font-size: 0.9rem;
+  }
+}
+
+.horarios {
+  width: 100%;
+  margin-bottom: 90px;
+  max-width: 500px;
+  ul {
+    width: 100%;
+    height: 100px;
+    list-style: none;
+  }
+  li {
+    width: 100%;
+    @include flexbox(row, space-between, left);
+    height: 40px;
+  }
+  li:nth-child(2) {
+    border-bottom: 1px solid rgb(226, 226, 226);
+    border-top: 1px solid rgb(226, 226, 226);
+  }
+  span {
+    @include flexbox(row, center, center);
+    text-transform: capitalize;
+    font-family: var(--fuente-principal);
+  }
+}
+.copy {
+  width: 100%;
+  background: white;
+  font-family: var(--fuente-principal);
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  .contenedor {
+    @include flexbox(row, center, center);
+    height: 50px;
+  }
+}
+
+//MEDIA QUERYS FOOTER
+
+@media (min-width: 850px) {
+  .footer-principal {
+    .contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
+    }
+    .logo-redes {
+      width: 50%;
+      flex-direction: row;
+      .logo-footer {
+        width: 250px;
+      }
+    }
+    .newsletter {
+      width: 50%;
+    }
+    .contacto {
+      width: 50%;
+    }
+    .horarios {
+      width: 50%;
+    }
   }
 }
