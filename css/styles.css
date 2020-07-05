@@ -6,8 +6,6 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
 }
 
 /*estrella vacia <i class="far fa-star"></i>
@@ -53,6 +51,7 @@ img {
   color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-size: clamp(0.75rem, 1.2vw, 1.4rem);
 }
 
 .nav-principal {
@@ -126,18 +125,17 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: inherit;
-      -ms-flex-pack: inherit;
-          justify-content: inherit;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .logo {
-  width: 120px;
+  width: 160px;
   height: 100%;
-  background: aqua;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -151,7 +149,6 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: auto;
 }
 
 .menu-oculto {
@@ -243,7 +240,25 @@ a:after {
   display: block;
 }
 
-.buscar,
+.buscar {
+  width: 50px;
+  height: 100%;
+  font-size: 1.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .favorito,
 .cart {
   width: 50px;
@@ -269,6 +284,9 @@ a:after {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+  .logo {
+    margin: 0 auto;
   }
 }
 
@@ -318,13 +336,13 @@ a:after {
   letter-spacing: 5px;
   color: var(--color-texto-secundario);
   padding: 15px 0;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.8vw, 1.6rem);
 }
 
 .titulos-principales {
   font-family: var(--fuente-principal);
   font-weight: 900;
-  font-size: 3rem;
+  font-size: clamp(2.6rem, 5vw, 6rem);
   text-transform: capitalize;
   color: var(--color-texto-principal);
   margin-bottom: 15px;
@@ -378,6 +396,7 @@ a:after {
 @media (min-width: 768px) {
   .contenedor-texto {
     margin-left: 120px;
+    max-width: 700px;
   }
   .btn-header-next,
   .btn-header-next:after,
@@ -994,9 +1013,8 @@ a:after {
 }
 
 .img-logo {
-  width: 60%;
-  height: 50px;
-  border: 1px solid #8f8f8f;
+  width: 180px;
+  height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1226,6 +1244,7 @@ a:after {
   }
   .footer-principal .logo-redes .logo-footer {
     width: 250px;
+    margin-right: 70px;
   }
   .footer-principal .newsletter {
     width: 50%;

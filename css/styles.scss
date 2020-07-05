@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all 0.2s ease-in-out;
 }
 /*estrella vacia <i class="far fa-star"></i>
   estrella a la mitad llena <i class="fas fa-star-half"></i> */
@@ -52,6 +51,7 @@ img {
   color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-size: clamp(0.75rem, 1.2vw, 1.4rem);
 }
 
 //mixins
@@ -91,14 +91,12 @@ img {
 
 .nav-inferior {
   height: 60px;
-  @include flexbox(row, inherit, center);
+  @include flexbox(row, space-between, center);
 }
 .logo {
-  width: 120px;
+  width: 160px;
   height: 100%;
-  background: aqua;
   @include flexbox(row, center, center);
-  margin-right: auto;
 }
 .menu-oculto {
   width: calc(100% - 245px);
@@ -159,7 +157,13 @@ a:after {
   margin: 1px;
   display: block;
 }
-.buscar,
+.buscar {
+  width: 50px;
+  height: 100%;
+  font-size: 1.3rem;
+  @include flexbox(row, center, center);
+}
+
 .favorito,
 .cart {
   width: 50px;
@@ -173,6 +177,10 @@ a:after {
   .favorito,
   .cart {
     @include flexbox(row, center, center);
+  }
+
+  .logo {
+    margin: 0 auto;
   }
 }
 @media (min-width: 850px) {
@@ -207,12 +215,12 @@ a:after {
   letter-spacing: 5px;
   color: var(--color-texto-secundario);
   padding: 15px 0;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.8vw, 1.6rem);
 }
 .titulos-principales {
   font-family: var(--fuente-principal);
   font-weight: 900;
-  font-size: 3rem;
+  font-size: clamp(2.6rem, 5vw, 6rem);
   text-transform: capitalize;
   color: var(--color-texto-principal);
   margin-bottom: 15px;
@@ -263,6 +271,7 @@ a:after {
 @media (min-width: 768px) {
   .contenedor-texto {
     margin-left: 120px;
+    max-width: 700px;
   }
   .btn-header-next,
   .btn-header-next:after,
@@ -654,9 +663,8 @@ a:after {
   margin-right: auto;
 }
 .img-logo {
-  width: 60%;
-  height: 50px;
-  border: 1px solid rgb(143, 143, 143);
+  width: 180px;
+  height: 60px;
   @include flexbox(column, center, center);
 }
 .redes {
@@ -770,6 +778,7 @@ a:after {
       flex-direction: row;
       .logo-footer {
         width: 250px;
+        margin-right: 70px;
       }
     }
     .newsletter {
