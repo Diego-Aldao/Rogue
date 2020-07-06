@@ -185,7 +185,7 @@ a:after {
 }
 @media (min-width: 850px) {
   .logo {
-    margin-right: 0;
+    margin: 0;
   }
   .menu-hamburguesa {
     display: none;
@@ -287,6 +287,8 @@ a:after {
   width: 100%;
   margin: 100px 0;
   position: relative;
+  max-width: 1800px;
+  margin: 100px auto;
 }
 .hero-movil {
   width: 100%;
@@ -410,7 +412,44 @@ a:after {
   height: 70%;
   background: #f5f5f5;
   position: relative;
-  z-index: -2;
+  @include flexbox(row, center, center);
+  transition: all 0.3s ease-in-out;
+}
+.img-item-compra:after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.199);
+  left: 0;
+  top: 0;
+  position: absolute;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.img-item-compra:before {
+  content: "\f002";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 1.5rem;
+  height: 50px;
+  width: 50px;
+  background: rgb(255, 255, 255);
+  position: absolute;
+  @include flexbox(row, center, center);
+  margin: auto;
+  border-radius: 50%;
+  z-index: 2;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.1s;
+  cursor: pointer;
+}
+.item-slider-compras:hover .img-item-compra:after {
+  opacity: 1;
+}
+.item-slider-compras:hover .img-item-compra:before {
+  opacity: 1;
 }
 
 .botones-item-compra {
@@ -419,8 +458,20 @@ a:after {
   position: absolute;
   top: 0;
   right: 0;
-  @include flexbox(column, space-between, center);
-  padding: 5px 0;
+  @include flexbox(column, space-between, flex-end);
+  padding: 5px;
+  overflow: hidden;
+  transition: all 0.1s ease-in-out;
+}
+
+.img-item-compra:before:hover {
+  display: flex;
+}
+.botones-item-compra:hover .ver-detalle {
+  margin-right: 0;
+}
+.botones-item-compra:hover .comprar {
+  margin-right: 0;
 }
 
 .btn-compra {
@@ -440,6 +491,8 @@ a:after {
 }
 .ver-detalle {
   background: black;
+  margin-right: -550px;
+  transition: all 0.5s ease-in-out;
 }
 
 .comprar {
@@ -447,7 +500,10 @@ a:after {
   color: black;
   font-size: 0.6rem;
   color: black;
+  margin-right: -550px;
   background: white;
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.1s;
 }
 
 .fav:after {
@@ -468,7 +524,6 @@ a:after {
 .fav:hover .fav:after {
   width: 120px;
 }
-
 .descripcion-productos {
   width: 100%;
   height: 30%;
@@ -511,6 +566,14 @@ a:after {
 }
 
 //MEDIA QUERYS SWIPER COMPRAS MUJERES-HOMBRES
+
+@media (min-width: 500px) {
+  .ver-detalle,
+  .comprar {
+    margin: 0;
+  }
+}
+
 @media (min-width: 850px) {
   .contenedor-slider {
     width: 59%;
@@ -635,6 +698,8 @@ a:after {
 //INICIO SECCION CATEGORIAS
 .contenedor-categorias {
   margin-bottom: 50px;
+  max-width: 1800px;
+  margin: 0 auto 50px;
   .titulos-secundarios {
     font-size: 1.1rem;
     width: 180px;
