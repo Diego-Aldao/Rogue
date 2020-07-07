@@ -14,6 +14,8 @@ body {
 }
 .menu-oculto {
   display: none;
+  position: relative;
+  z-index: 99;
 }
 .oculto {
   display: none;
@@ -103,6 +105,9 @@ img {
   height: 100%;
   margin: auto;
   max-width: 650px;
+  background: white;
+
+  position: relative;
 }
 .contenedor-link {
   width: 100%;
@@ -192,7 +197,83 @@ a:after {
   }
   .menu-oculto {
     display: flex;
+    z-index: 2;
   }
+}
+
+.menu-desplegable {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position: fixed;
+  left: -100%;
+  top: 0;
+  background: white;
+  z-index: 9;
+  max-width: 500px;
+}
+@media (min-width: 850px) {
+  .menu-desplegable {
+    display: none;
+  }
+}
+
+.btn-cerrar-contenedor {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 15px;
+}
+.btn-cerrar {
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  @include flexbox(column, center, center);
+  position: relative;
+}
+.linea-cerrar {
+  height: 2px;
+  width: 35px;
+  background: var(--color-principal);
+  transform: rotate(45deg);
+  position: absolute; //para centrar la cruz
+}
+.linea-cerrar:nth-child(2) {
+  transform: rotate(-45deg);
+}
+.barra-superior {
+  width: 100%;
+  height: 50px;
+  @include flexbox(row, space-evenly, center);
+  flex-wrap: wrap;
+}
+.menu-global,
+.menu-categorias {
+  width: 45%;
+  height: 100%;
+  @include flexbox(row, center, center);
+  background: var(--color-principal);
+  color: black;
+}
+
+.contenido-categorias-menu-desplegable {
+  width: 100%;
+  height: calc(100% - 60px);
+  @include flexbox(column, center, center);
+}
+
+.categoria-menu-desplegable {
+  width: 90%;
+  height: 80px;
+  margin: 15px auto;
+  @include flexbox(row, center, center);
+  background: black;
+}
+.nombre-categoria {
+  font-size: 1.3rem;
+  font-family: var(--fuente-principal);
+  font-style: italic;
+  font-weight: bolder;
+  color: white;
 }
 
 //SECCION HEADER
@@ -207,6 +288,7 @@ a:after {
   height: 80%;
   margin-left: 5%;
   max-width: 450px;
+  padding-top: 15px;
 }
 .mini-texto {
   font-family: var(--fuente-principal);
@@ -230,7 +312,7 @@ a:after {
 .swiper-container {
   width: 100%;
   height: 400px;
-  min-height: 35vw;
+  min-height: 45vw;
 }
 .contenedor-header:nth-child(1) {
   background: url("../images/images-slider/slider02.jpg");
@@ -464,16 +546,6 @@ a:after {
   transition: all 0.1s ease-in-out;
 }
 
-.img-item-compra:before:hover {
-  display: flex;
-}
-.botones-item-compra:hover .ver-detalle {
-  margin-right: 0;
-}
-.botones-item-compra:hover .comprar {
-  margin-right: 0;
-}
-
 .btn-compra {
   width: 35px;
   height: 35px;
@@ -491,7 +563,6 @@ a:after {
 }
 .ver-detalle {
   background: black;
-  margin-right: -550px;
   transition: all 0.5s ease-in-out;
 }
 
@@ -500,7 +571,6 @@ a:after {
   color: black;
   font-size: 0.6rem;
   color: black;
-  margin-right: -550px;
   background: white;
   transition: all 0.5s ease-in-out;
   transition-delay: 0.1s;
