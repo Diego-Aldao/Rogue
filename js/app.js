@@ -36,8 +36,7 @@ var swiper = new Swiper(".contenedor-slider-productos-categorias", {
   },
 });
 
-//ANIMACIONES CON GSAP
-
+//ANIMACIONES CON GSAP HEADER
 gsap.from(".titulos-principales", {
   duration: 1,
   x: -150,
@@ -88,3 +87,115 @@ gsap.from(".body", {
 })();
 
 //EVENT LISTENERS NAV-mujeres
+(function () {
+  const navMujer = document.querySelector(".nav-mujer");
+  const dropDownMujer = document.querySelector(".dropdown-mujer");
+
+  navMujer.addEventListener("mouseover", () => {
+    gsap.to(dropDownMujer, {
+      duration: 0.5,
+      height: 200,
+      border: "1px solid rgb(228, 228, 228)",
+    });
+    gsap.to(".item-mujer", {
+      delay: 0.2,
+      duration: 0.5,
+      flex: 1,
+    });
+  });
+  navMujer.addEventListener("mouseleave", () => {
+    gsap.to(dropDownMujer, {
+      duration: 0.5,
+      height: 0,
+      border: "none",
+    });
+    gsap.to(".item-mujer", {
+      duration: 0.5,
+      flex: 0,
+    });
+  });
+})();
+
+(function () {
+  const navHombre = document.querySelector(".nav-hombre");
+  const dropDownHombre = document.querySelector(".dropdown-hombre");
+
+  navHombre.addEventListener("mouseover", () => {
+    gsap.to(dropDownHombre, {
+      duration: 0.5,
+      height: 200,
+      border: "1px solid rgb(228, 228, 228)",
+    });
+    gsap.to(".item-hombre", {
+      duration: 0.5,
+      flex: 1,
+    });
+  });
+  navHombre.addEventListener("mouseleave", () => {
+    gsap.to(dropDownHombre, {
+      duration: 0.5,
+      height: 0,
+      border: "none",
+    });
+    gsap.to(".item-hombre", {
+      duration: 0.5,
+      flex: 0,
+    });
+  });
+})();
+
+(function () {
+  const navDescuento = document.querySelector(".nav-descuento");
+  const dropDownDescuento = document.querySelector(".dropdown-descuento");
+
+  navDescuento.addEventListener("mouseover", () => {
+    gsap.to(dropDownDescuento, {
+      duration: 0.5,
+      height: 150,
+      border: "1px solid rgb(228, 228, 228)",
+    });
+    gsap.to(".item-descuento", {
+      duration: 0.5,
+      flex: 1,
+    });
+  });
+  navDescuento.addEventListener("mouseleave", () => {
+    gsap.to(dropDownDescuento, {
+      duration: 0.5,
+      height: 0,
+      border: "none",
+    });
+    gsap.to(".item-descuento", {
+      duration: 0.5,
+      flex: 0,
+    });
+  });
+})();
+
+(function () {
+  const navNuevo = document.querySelector(".nav-nuevo");
+  const dropDownNuevo = document.querySelector(".dropdown-nuevo");
+
+  navNuevo.addEventListener("mouseover", () => {
+    gsap.to(dropDownNuevo, {
+      duration: 0.5,
+      height: 200,
+      border: "1px solid rgb(228, 228, 228)",
+    });
+    gsap.to(".item-nuevo", {
+      duration: 0.5,
+      flex: 1,
+    });
+  });
+  navNuevo.addEventListener("mouseleave", () => {
+    gsap.to(dropDownNuevo, {
+      duration: 0.5,
+      height: 0,
+      border: "none",
+    });
+    gsap.to(".item-nuevo", {
+      duration: 0.5,
+      flex: 0,
+    });
+  });
+})();

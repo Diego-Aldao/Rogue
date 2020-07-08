@@ -66,7 +66,6 @@ img {
 }
 
 //navegacion-principal
-
 .nav-principal {
   width: 100%;
   height: 100px;
@@ -126,9 +125,12 @@ img {
 }
 .links {
   position: relative;
-  overflow: hidden;
+  height: 100%;
+  padding-top: 20px;
 }
-a:after {
+
+//crea problema con el dropdown
+/*a:after {
   content: "";
   width: 100%;
   height: 2px;
@@ -138,7 +140,8 @@ a:after {
   left: -100%;
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
-}
+}*/
+
 .current:after {
   left: 0;
 }
@@ -199,6 +202,48 @@ a:after {
     display: flex;
     z-index: 2;
   }
+}
+
+//dropdown
+
+.nav-mujer {
+  position: relative;
+  overflow: visible;
+}
+.dropdown {
+  position: absolute;
+  top: 60px;
+  left: -10px;
+  height: 0px;
+  width: 100px;
+  background: white;
+  @include flexbox(row, center, center);
+  overflow: hidden;
+  ul {
+    width: 100%;
+    height: 100%;
+    @include flexbox(column, space-evenly, center);
+    list-style: none;
+  }
+}
+.dropdown-item {
+  width: 100%;
+  flex: 0;
+  overflow: hidden;
+  @include flexbox(row, center, center);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.dropdown-item:hover {
+  background: var(--color-principal);
+  color: white;
+}
+.dropdown-nuevo {
+  left: -20px;
+}
+
+.dropdown-descuento {
+  left: 10px;
 }
 
 .menu-desplegable {

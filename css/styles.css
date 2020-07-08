@@ -193,10 +193,11 @@ img {
 
 .links {
   position: relative;
-  overflow: hidden;
+  height: 100%;
+  padding-top: 20px;
 }
 
-a:after {
+/*a:after {
   content: "";
   width: 100%;
   height: 2px;
@@ -205,10 +206,8 @@ a:after {
   background: black;
   left: -100%;
   border-radius: 5px;
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-}
-
+}*/
 .current:after {
   left: 0;
 }
@@ -307,6 +306,90 @@ a:after {
     display: flex;
     z-index: 2;
   }
+}
+
+.nav-mujer {
+  position: relative;
+  overflow: visible;
+}
+
+.dropdown {
+  position: absolute;
+  top: 60px;
+  left: -10px;
+  height: 0px;
+  width: 100px;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+.dropdown ul {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+}
+
+.dropdown-item {
+  width: 100%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: var(--color-principal);
+  color: white;
+}
+
+.dropdown-nuevo {
+  left: -20px;
+}
+
+.dropdown-descuento {
+  left: 10px;
 }
 
 .menu-desplegable {
