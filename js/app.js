@@ -15,6 +15,7 @@ var swiper = new Swiper(".swiper-container", {
 var swiper = new Swiper(".contenedor-slider", {
   slidesPerView: 2,
   spaceBetween: 10,
+  loop: true,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -86,7 +87,7 @@ gsap.from(".body", {
   });
 })();
 
-//EVENT LISTENERS NAV-mujeres
+//EVENT LISTENERS DROPDOWNS
 (function () {
   const navMujer = document.querySelector(".nav-mujer");
   const dropDownMujer = document.querySelector(".dropdown-mujer");
@@ -98,9 +99,9 @@ gsap.from(".body", {
       border: "1px solid rgb(228, 228, 228)",
     });
     gsap.to(".item-mujer", {
-      delay: 0.2,
-      duration: 0.5,
-      flex: 1,
+      duration: 0.1,
+      delay: 0.1,
+      opacity: 1,
     });
   });
   navMujer.addEventListener("mouseleave", () => {
@@ -110,8 +111,8 @@ gsap.from(".body", {
       border: "none",
     });
     gsap.to(".item-mujer", {
-      duration: 0.5,
-      flex: 0,
+      duration: 0.1,
+      opacity: 0,
     });
   });
 })();
@@ -127,8 +128,9 @@ gsap.from(".body", {
       border: "1px solid rgb(228, 228, 228)",
     });
     gsap.to(".item-hombre", {
-      duration: 0.5,
-      flex: 1,
+      duration: 0.1,
+      delay: 0.1,
+      opacity: 1,
     });
   });
   navHombre.addEventListener("mouseleave", () => {
@@ -138,8 +140,8 @@ gsap.from(".body", {
       border: "none",
     });
     gsap.to(".item-hombre", {
-      duration: 0.5,
-      flex: 0,
+      duration: 0.1,
+      opacity: 0,
     });
   });
 })();
@@ -155,8 +157,9 @@ gsap.from(".body", {
       border: "1px solid rgb(228, 228, 228)",
     });
     gsap.to(".item-descuento", {
-      duration: 0.5,
-      flex: 1,
+      duration: 0.1,
+      delay: 0.1,
+      opacity: 1,
     });
   });
   navDescuento.addEventListener("mouseleave", () => {
@@ -166,8 +169,8 @@ gsap.from(".body", {
       border: "none",
     });
     gsap.to(".item-descuento", {
-      duration: 0.5,
-      flex: 0,
+      duration: 0.1,
+      opacity: 0,
     });
   });
 })();
@@ -183,8 +186,9 @@ gsap.from(".body", {
       border: "1px solid rgb(228, 228, 228)",
     });
     gsap.to(".item-nuevo", {
-      duration: 0.5,
-      flex: 1,
+      duration: 0.1,
+      delay: 0.1,
+      opacity: 1,
     });
   });
   navNuevo.addEventListener("mouseleave", () => {
@@ -194,8 +198,39 @@ gsap.from(".body", {
       border: "none",
     });
     gsap.to(".item-nuevo", {
-      duration: 0.5,
-      flex: 0,
+      duration: 0.1,
+      opacity: 0,
+    });
+  });
+})();
+
+//EVENT LISTENERS MODAL
+
+(function () {
+  const modal = document.querySelector(".modal-producto");
+  const btnCerrarModal = document.querySelector(".btn-cerrar-modal");
+  const btnAbrirModal = document.querySelectorAll(".ver-detalle");
+
+  btnAbrirModal.forEach((boton) => {
+    boton.addEventListener("click", () => {
+      gsap.to(modal, {
+        width: "100%",
+      });
+      gsap.to(modal, {
+        delay: 0.4,
+        opacity: 1,
+      });
+    });
+  });
+
+  btnCerrarModal.addEventListener("click", () => {
+    gsap.to(modal, {
+      duration: 0.3,
+      opacity: 0,
+    });
+    gsap.to(modal, {
+      delay: 0.4,
+      width: 0,
     });
   });
 })();
