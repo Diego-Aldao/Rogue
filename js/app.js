@@ -16,6 +16,8 @@ var swiper = new Swiper(".contenedor-slider", {
   slidesPerView: 2,
   spaceBetween: 10,
   loop: true,
+  autoplay: true,
+  speed: 2000,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -234,3 +236,10 @@ gsap.from(".body", {
     });
   });
 })();
+
+//ORDEN DE LAS PROPIEDADES
+
+/*layout: (position,float, index)
+  Display/box-model(display,margin,padding,width)
+  Visual(color,background,shadow)
+  tipografica: (font-size, font-famili, text-align)*/
