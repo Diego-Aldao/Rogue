@@ -127,10 +127,10 @@
             </li>
           </ul>
         </div>
-        <div class="cart oculto">
+        <div class="cart">
           <i class="fas fa-shopping-cart"></i>
         </div>
-        <div class="buscar">
+        <div class="buscar oculto">
           <i class="fas fa-search"></i>
         </div>
         <div class="favorito oculto">
@@ -1006,6 +1006,65 @@
         </div>
       </div>
     </footer>
+
+    <!--MENUS/POP-UPS OCULTOS-->
+    <div class="bg-black-desplazable"></div>
+    <div class="desplazable-cart-search-fav">
+      <div class="barra-superior">
+        <h3 class="titulo-carrito">tus productos</h3>
+        <div class="btn-cerrar-cart">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+      </div>
+      <div class="contenido-cart">
+        <div class="ejemplo-item">
+          <div class="img-item">
+            <img src="./images/ropa-hombre/hoodie-mini.webp" alt="" />
+          </div>
+          <div class="descripcion-item">
+            <h2 class="nombre-producto-categorias">buzo nike</h2>
+            <p class="precio-producto-categorias">$1200</p>
+            <span class="color-item"></span><span class="tamaño-item">M</span>
+          </div>
+          <div class="editar-item">
+            <div class="contador">
+              <button class="btn-contador-resta">-</button>
+              <span class="contador-numero">1</span>
+              <button class="btn-contador-suma">+</button>
+            </div>
+            <span class="remover">remover</span>
+          </div>
+        </div>
+        <div class="ejemplo-item">
+          <div class="img-item">
+            <img src="/images/ropa-hombre/sneaker01-mini.webp" alt="" />
+          </div>
+          <div class="descripcion-item">
+            <h2 class="nombre-producto-categorias">zapatillas vans</h2>
+            <p class="precio-producto-categorias">$4199</p>
+            <span class="color-item"></span><span class="tamaño-item">41</span>
+          </div>
+          <div class="editar-item">
+            <div class="contador">
+              <button class="btn-contador-resta">-</button>
+              <span class="contador-numero">1</span>
+              <button class="btn-contador-suma">+</button>
+            </div>
+            <span class="remover">remover</span>
+          </div>
+        </div>
+        <div class="terminar-compra">
+          <div class="cuenta-final">
+            <span class="subtotal">subtotal:</span
+            ><span class="subtotal-valor">$20</span>
+          </div>
+          <div class="botones-compra">
+            <button class="btn-principal">ver carrito</button>
+            <button class="btn-principal">pagar</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="modal-producto">
       <div class="contenedor-modal-producto">
         <div class="btn-cerrar-modal">

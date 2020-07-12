@@ -70,11 +70,19 @@ gsap.from(".body", {
   const menuDesplegable = document.querySelector(".menu-desplegable");
   const menuHamburguesa = document.querySelector(".menu-hamburguesa");
   const botonCerrar = document.querySelector(".btn-cerrar");
+  const bgOscuro = document.querySelector(".bg-black-desplazable");
 
   menuHamburguesa.addEventListener("click", () => {
     gsap.to(menuDesplegable, {
       duration: 0.5,
       left: 0,
+    });
+    gsap.to(bgOscuro, {
+      width: "100%",
+    });
+    gsap.to(bgOscuro, {
+      delay: 0.5,
+      opacity: 1,
     });
   });
 
@@ -85,6 +93,13 @@ gsap.from(".body", {
     gsap.to(menuDesplegable, {
       duration: 0.5,
       left: "-100vw",
+    });
+    gsap.to(bgOscuro, {
+      opacity: 0,
+    });
+    gsap.to(bgOscuro, {
+      delay: 0.5,
+      width: 0,
     });
   });
 })();
@@ -207,7 +222,6 @@ gsap.from(".body", {
 })();
 
 //EVENT LISTENERS MODAL
-
 (function () {
   const modal = document.querySelector(".modal-producto");
   const btnCerrarModal = document.querySelector(".btn-cerrar-modal");
@@ -237,9 +251,39 @@ gsap.from(".body", {
   });
 })();
 
-//ORDEN DE LAS PROPIEDADES
+//EVENT LISTENERS CART
 
-/*layout: (position,float, index)
-  Display/box-model(display,margin,padding,width)
-  Visual(color,background,shadow)
-  tipografica: (font-size, font-famili, text-align)*/
+(function () {
+  const contenedorCart = document.querySelector(".desplazable-cart-search-fav");
+  const btnAbrirCart = document.querySelector(".cart");
+  const btnCerrarCart = document.querySelector(".btn-cerrar-cart");
+  const bgOscuro = document.querySelector(".bg-black-desplazable");
+
+  btnAbrirCart.addEventListener("click", () => {
+    gsap.to(contenedorCart, {
+      right: 0,
+      opacity: 1,
+    });
+    gsap.to(bgOscuro, {
+      width: "100%",
+    });
+    gsap.to(bgOscuro, {
+      delay: 0.3,
+      opacity: 1,
+    });
+  });
+
+  btnCerrarCart.addEventListener("click", () => {
+    gsap.to(contenedorCart, {
+      right: "-100%",
+      opacity: 0,
+    });
+    gsap.to(bgOscuro, {
+      opacity: 0,
+    });
+    gsap.to(bgOscuro, {
+      delay: 0.5,
+      width: 0,
+    });
+  });
+})();
