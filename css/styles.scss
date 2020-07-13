@@ -1371,6 +1371,7 @@ img {
   max-width: 500px;
   height: 100%;
   opacity: 0; //para aniamr con gsap
+
   background: rgb(255, 255, 255);
   .btn-cerrar-desplazable {
     width: 50px;
@@ -1395,6 +1396,7 @@ img {
   height: 100%;
   display: none;
   opacity: 0;
+  overflow: scroll; //AÑADIDO EN LOS HIJOS DEL DESPLAZABLE PARA NO AFECTAR EL BOTON CERRAR
 }
 .barra-superior,
 .titulo-carrito,
@@ -1552,6 +1554,7 @@ img {
   height: 100%;
   display: none;
   opacity: 0;
+  overflow: scroll; //AÑADIDO EN LOS HIJOS DEL DESPLAZABLE PARA NO AFECTAR EL BOTON CERRAR
   .barra-superior {
     width: 100%;
     height: 60px;
@@ -1638,5 +1641,36 @@ img {
     margin-bottom: 10px;
     font-size: 2.2rem;
     color: var(--color-texto-secundario);
+  }
+}
+//DESPLAZABLE SEARCH
+
+.desplazable-search {
+  width: 100%;
+  height: 100%;
+  padding: 80px 10px 0;
+  .contenido-search {
+    width: 100%;
+    height: 50px;
+    @include flexbox(row, center, center);
+    max-width: 450px;
+    margin: 0 auto;
+  }
+  .input-search {
+    width: calc(100% - 55px);
+    height: 100%;
+    border: none;
+    border-bottom: 2px solid black;
+    padding: 0 10px;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    font-family: var(--fuente-secundaria);
+  }
+  .icono-search {
+    display: block;
+    width: 55px;
+    height: 100%;
+    @include flexbox(row, center, center);
+    font-size: 1.3rem;
   }
 }

@@ -2,6 +2,11 @@ var swiper = new Swiper(".swiper-container", {
   spaceBetween: 30,
   effect: "fade",
   speed: 1000,
+  autoplay: true,
+  autoplay: {
+    speed: 1500,
+    delay: 5500,
+  },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -345,6 +350,52 @@ gsap.from(".body", {
       width: 0,
     });
     gsap.to(contenedorUser, {
+      opacity: 0,
+    });
+    gsap.to(bgOscuro, {
+      opacity: 0,
+    });
+    gsap.to(bgOscuro, {
+      delay: 0.5,
+      width: 0,
+    });
+  });
+
+  const btnAbrirSearch = document.querySelector(".buscar");
+  const contenedorSearch = document.querySelector(".desplazable-search");
+  btnAbrirSearch.addEventListener("click", () => {
+    gsap.to(contenedorDesplegable, {
+      right: 0,
+      opacity: 1,
+    });
+    gsap.to(contenedorSearch, {
+      display: "block",
+      width: "100%",
+    });
+    gsap.to(contenedorSearch, {
+      delay: 0.8,
+      opacity: 1,
+    });
+    gsap.to(bgOscuro, {
+      width: "100%",
+    });
+    gsap.to(bgOscuro, {
+      delay: 0.3,
+      opacity: 1,
+    });
+  });
+
+  btnCerrarDesplazable.addEventListener("click", () => {
+    gsap.to(contenedorDesplegable, {
+      right: "-100%",
+      opacity: 0,
+    });
+    gsap.to(contenedorSearch, {
+      delay: 0.7,
+      display: "none",
+      width: 0,
+    });
+    gsap.to(contenedorSearch, {
       opacity: 0,
     });
     gsap.to(bgOscuro, {
