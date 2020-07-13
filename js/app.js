@@ -17,7 +17,7 @@ var swiper = new Swiper(".contenedor-slider", {
   spaceBetween: 10,
   loop: true,
   autoplay: true,
-  speed: 2000,
+  speed: 500,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -146,19 +146,19 @@ gsap.from(".body", {
     });
     gsap.to(".item-hombre", {
       duration: 0.1,
-      delay: 0.1,
+      delay: 0.3,
       opacity: 1,
     });
   });
   navHombre.addEventListener("mouseleave", () => {
+    gsap.to(".item-hombre", {
+      duration: 0.2,
+      opacity: 0,
+    });
     gsap.to(dropDownHombre, {
       duration: 0.5,
       height: 0,
       border: "none",
-    });
-    gsap.to(".item-hombre", {
-      duration: 0.1,
-      opacity: 0,
     });
   });
 })();
@@ -251,17 +251,31 @@ gsap.from(".body", {
   });
 })();
 
-//EVENT LISTENERS CART
-
+//EVENT LISTENERS DESPLAZABLES
 (function () {
-  const contenedorCart = document.querySelector(".desplazable-cart-search-fav");
-  const btnAbrirCart = document.querySelector(".cart");
-  const btnCerrarCart = document.querySelector(".btn-cerrar-cart");
+  const contenedorDesplegable = document.querySelector(
+    ".desplazable-cart-search-fav-user"
+  );
+  const btnCerrarDesplazable = document.querySelector(
+    ".btn-cerrar-desplazable"
+  );
   const bgOscuro = document.querySelector(".bg-black-desplazable");
 
+  //INICIO CART
+  const btnAbrirCart = document.querySelector(".cart");
+  const contenedorCart = document.querySelector(".desplazable-cart");
+
   btnAbrirCart.addEventListener("click", () => {
-    gsap.to(contenedorCart, {
+    gsap.to(contenedorDesplegable, {
       right: 0,
+      opacity: 1,
+    });
+    gsap.to(contenedorCart, {
+      display: "block",
+      width: "100%",
+    });
+    gsap.to(contenedorCart, {
+      delay: 0.8,
       opacity: 1,
     });
     gsap.to(bgOscuro, {
@@ -273,9 +287,64 @@ gsap.from(".body", {
     });
   });
 
-  btnCerrarCart.addEventListener("click", () => {
-    gsap.to(contenedorCart, {
+  btnCerrarDesplazable.addEventListener("click", () => {
+    gsap.to(contenedorDesplegable, {
       right: "-100%",
+      opacity: 0,
+    });
+    gsap.to(contenedorCart, {
+      delay: 0.7,
+      display: "none",
+      width: 0,
+    });
+    gsap.to(contenedorCart, {
+      opacity: 0,
+    });
+    gsap.to(bgOscuro, {
+      opacity: 0,
+    });
+    gsap.to(bgOscuro, {
+      delay: 0.5,
+      width: 0,
+    });
+  });
+
+  //INICIO USER
+  const btnAbrirUser = document.querySelector(".login");
+  const contenedorUser = document.querySelector(".desplazable-user");
+  btnAbrirUser.addEventListener("click", () => {
+    gsap.to(contenedorDesplegable, {
+      right: 0,
+      opacity: 1,
+    });
+    gsap.to(contenedorUser, {
+      display: "block",
+      width: "100%",
+    });
+    gsap.to(contenedorUser, {
+      delay: 0.8,
+      opacity: 1,
+    });
+    gsap.to(bgOscuro, {
+      width: "100%",
+    });
+    gsap.to(bgOscuro, {
+      delay: 0.3,
+      opacity: 1,
+    });
+  });
+
+  btnCerrarDesplazable.addEventListener("click", () => {
+    gsap.to(contenedorDesplegable, {
+      right: "-100%",
+      opacity: 0,
+    });
+    gsap.to(contenedorUser, {
+      delay: 0.7,
+      display: "none",
+      width: 0,
+    });
+    gsap.to(contenedorUser, {
       opacity: 0,
     });
     gsap.to(bgOscuro, {

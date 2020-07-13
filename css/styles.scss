@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -49,6 +47,8 @@ img {
 }
 
 //fuentes y colores
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap");
 :root {
   --fuente-principal: "Nunito Sans", sans-serif;
   --fuente-secundaria: "Montserrat", sans-serif;
@@ -69,6 +69,7 @@ img {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: clamp(0.75rem, 1.2vw, 1.4rem);
+  cursor: pointer;
 }
 
 //mixins
@@ -112,6 +113,11 @@ img {
     width: 200px;
     font-family: var(--fuente-principal);
     justify-content: space-evenly;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  .login:hover {
+    color: var(--color-principal);
   }
 
   .nav-inferior {
@@ -152,6 +158,9 @@ img {
     font-weight: bold;
     letter-spacing: 2px;
   }
+  .links a:hover {
+    color: var(--color-principal);
+  }
 
   .menu-hamburguesa {
     width: 50px;
@@ -167,18 +176,23 @@ img {
     border: 1px solid black;
     border-radius: 50%;
   }
-
-  .cart {
+  .cart,
+  .favorito,
+  .buscar {
     width: 50px;
     font-size: 1.3rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
   }
 
   .favorito,
   .buscar {
     display: none;
-    width: 50px;
-    height: 100%;
-    font-size: 1.3rem;
+  }
+  .cart:hover,
+  .buscar:hover,
+  .favorito:hover {
+    color: var(--color-principal);
   }
 }
 
@@ -445,7 +459,6 @@ img {
   width: 30%;
   height: 650px;
   display: none;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.281);
 }
 .titulos-secundarios {
   width: 150px;
@@ -1348,17 +1361,40 @@ img {
   opacity: 0;
 }
 
-//DESPLAZABLE CARRITO
-.desplazable-cart-search-fav {
+//CONTENEDOR DE LOS 4 DESPLEGABLES
+.desplazable-cart-search-fav-user {
   position: fixed;
   top: 0;
-  right: -100%;
+  right: -100%; //para aniamr con gsap
   z-index: 900;
   width: 88%;
-  max-width: 600px;
+  max-width: 500px;
   height: 100%;
-  opacity: 0;
+  opacity: 0; //para aniamr con gsap
   background: rgb(255, 255, 255);
+  .btn-cerrar-desplazable {
+    width: 50px;
+    height: 50px;
+    background: white;
+    z-index: inherit;
+    border: 1px solid rgb(223, 223, 223);
+    position: absolute;
+    left: -20px;
+    top: 10px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    @include flexbox(row, center, center);
+    cursor: pointer;
+  }
+}
+
+//INICIO DESPLEGABLE CARRITO
+.desplazable-cart {
+  position: relative;
+  width: 0;
+  height: 100%;
+  display: none;
+  opacity: 0;
 }
 .barra-superior,
 .titulo-carrito,
@@ -1366,28 +1402,16 @@ img {
   @include flexbox(row, center, center);
 }
 .barra-superior {
-  width: 100%;
-  height: 70px;
   position: relative;
+  width: 100%;
+  height: 60px;
+  @include flexbox(row, center, center);
+  border-bottom: 1px solid rgb(228, 228, 228);
 
   .titulo-carrito {
-    width: 100%;
-    height: 100%;
     font-family: var(--fuente-principal);
-    text-transform: capitalize;
-    font-size: 1.7rem;
-  }
-  .btn-cerrar-cart {
-    width: 50px;
-    height: 50px;
-    background: white;
-    border: 1px solid rgb(223, 223, 223);
-    position: absolute;
-    left: -20px;
-    top: 40px;
-    border-radius: 50%;
     font-size: 1.5rem;
-    @include flexbox(row, center, center);
+    text-transform: uppercase;
   }
 }
 .contenido-cart {
@@ -1519,5 +1543,100 @@ img {
   .btn-principal:nth-child(2) {
     font-weight: bolder;
     font-size: 0.9rem;
+  }
+}
+
+//INICIO DESPLAZABLE USER
+.desplazable-user {
+  width: 100%;
+  height: 100%;
+  display: none;
+  opacity: 0;
+  .barra-superior {
+    width: 100%;
+    height: 60px;
+    @include flexbox(row, center, center);
+    border-bottom: 1px solid rgb(214, 214, 214);
+  }
+  .titulo-logueo {
+    font-family: var(--fuente-principal);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+  .contenido-login {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 10px;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .login {
+    width: 100%;
+    height: 25px;
+    font-family: var(--fuente-principal);
+    text-transform: capitalize;
+    span {
+      color: rgb(255, 0, 0);
+    }
+  }
+  .input {
+    width: 100%;
+    height: 35px;
+    @include flexbox(row, center, center);
+    margin: 5px 0 15px;
+    max-width: 400px;
+  }
+  .icono-login {
+    display: block;
+    width: 35px;
+    height: 100%;
+    @include flexbox(row, center, center);
+    color: var(--color-texto-secundario);
+    border: 1px solid rgb(230, 230, 230);
+  }
+  .input-user {
+    width: calc(100% - 35px);
+    height: 35px;
+    border: none;
+    background: rgb(241, 241, 241);
+    padding: 0 10px;
+    font-size: 1.1rem;
+  }
+  .btn-principal {
+    width: 100%;
+    align-self: center;
+    margin: 20px 0;
+    font-size: 0.9rem;
+    max-width: 350px;
+  }
+  .recuperar-contraseña,
+  .crear-cuenta {
+    width: 100%;
+    height: 55px;
+    font-family: var(--fuente-principal);
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  .recuperar,
+  .crear {
+    text-decoration: underline;
+    color: red;
+    cursor: pointer;
+  }
+  .contenido-registro {
+    width: 100%;
+    padding: 25px 10px;
+    @include flexbox(column, center, center);
+  }
+  .icono-signup {
+    width: 45px;
+    height: 45px;
+    @include flexbox(row, center, center);
+    margin-bottom: 10px;
+    font-size: 2.2rem;
+    color: var(--color-texto-secundario);
   }
 }
