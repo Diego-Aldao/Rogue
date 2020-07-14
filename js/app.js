@@ -115,8 +115,10 @@ gsap.from(".body", {
   //FUNCIONES PARA ANIMAR DROPDOWNS
   const abrirDropdown = (dropdownTarget, itemLiHijo) => {
     gsap.to(dropdownTarget, {
-      duration: 0.5,
-      height: 200,
+      duration: 0.2,
+      top: 60,
+      opacity: 1,
+      display: "flex",
       border: "1px solid rgb(228, 228, 228)",
     });
     gsap.to(itemLiHijo, {
@@ -127,8 +129,10 @@ gsap.from(".body", {
   };
   const cerrarDropdown = (dropdownTarget, itemLiHijo) => {
     gsap.to(dropdownTarget, {
-      duration: 0.5,
-      height: 0,
+      duration: 0.2,
+      top: 40,
+      opacity: 0,
+      display: "none",
       border: "none",
     });
     gsap.to(itemLiHijo, {

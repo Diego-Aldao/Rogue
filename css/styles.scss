@@ -227,24 +227,21 @@ img {
 //DROPDOWN LINKS NAV PRINCIPAL
 .dropdown {
   position: absolute;
-  top: 60px;
+  top: 40px;
   left: -10px;
   width: 100px;
-  height: 0px;
+  height: 200px;
   @include flexbox(row, center, center);
   overflow: hidden;
   background: white;
+  display: none;
+  opacity: 0;
   ul {
     width: 100%;
     height: 100%;
     @include flexbox(column, space-evenly, center);
     list-style: none;
   }
-}
-
-.nav-mujer {
-  position: relative;
-  overflow: visible;
 }
 
 .dropdown-item {
