@@ -1,3 +1,4 @@
+//SWIPER PARA EL HEADER
 var swiper = new Swiper(".swiper-container", {
   spaceBetween: 30,
   effect: "fade",
@@ -17,11 +18,12 @@ var swiper = new Swiper(".swiper-container", {
   },
 });
 
+//SWIPER PARA SECCION COMPRA MUJER/HOMBRE
 var swiper = new Swiper(".contenedor-slider", {
   slidesPerView: 2,
   spaceBetween: 10,
   loop: true,
-  autoplay: true,
+  autoplay: false,
   speed: 500,
   navigation: {
     nextEl: ".swiper-button-next",
@@ -35,6 +37,7 @@ var swiper = new Swiper(".contenedor-slider", {
   },
 });
 
+//SWIPER PARA SECCION CATEGORIAS
 var swiper = new Swiper(".contenedor-slider-productos-categorias", {
   slidesPerView: 1,
   spaceBetween: 0,
@@ -44,7 +47,7 @@ var swiper = new Swiper(".contenedor-slider-productos-categorias", {
   },
 });
 
-//ANIMACIONES CON GSAP HEADER
+//ANIMACIONES CON GSAP PARA EL HEADER
 gsap.from(".titulos-principales", {
   duration: 1,
   x: -150,
@@ -68,9 +71,7 @@ gsap.from(".body", {
   opacity: 0,
 });
 
-//MENU DESPLEGABLE
-
-//EVENT LISTENERS DEL MENU DESPLEGABLE
+//EVENT LISTENERS DEL MENU PRINCIPAL DESPLEGABLE
 (function () {
   const menuDesplegable = document.querySelector(".menu-desplegable");
   const menuHamburguesa = document.querySelector(".menu-hamburguesa");
@@ -111,118 +112,73 @@ gsap.from(".body", {
 
 //EVENT LISTENERS DROPDOWNS
 (function () {
+  //FUNCIONES PARA ANIMAR DROPDOWNS
+  const abrirDropdown = (dropdownTarget, itemLiHijo) => {
+    gsap.to(dropdownTarget, {
+      duration: 0.5,
+      height: 200,
+      border: "1px solid rgb(228, 228, 228)",
+    });
+    gsap.to(itemLiHijo, {
+      duration: 0.1,
+      delay: 0.1,
+      opacity: 1,
+    });
+  };
+  const cerrarDropdown = (dropdownTarget, itemLiHijo) => {
+    gsap.to(dropdownTarget, {
+      duration: 0.5,
+      height: 0,
+      border: "none",
+    });
+    gsap.to(itemLiHijo, {
+      duration: 0.1,
+      opacity: 0,
+    });
+  };
+
+  //INICIO DROPDOWN MUJER
   const navMujer = document.querySelector(".nav-mujer");
   const dropDownMujer = document.querySelector(".dropdown-mujer");
 
   navMujer.addEventListener("mouseover", () => {
-    gsap.to(dropDownMujer, {
-      duration: 0.5,
-      height: 200,
-      border: "1px solid rgb(228, 228, 228)",
-    });
-    gsap.to(".item-mujer", {
-      duration: 0.1,
-      delay: 0.1,
-      opacity: 1,
-    });
+    abrirDropdown(dropDownMujer, ".item-mujer"); //EL SEGUNDO PARAMETRO NO ESTA GUARDADO EN UNA VARIABLE PORQUE AL SER VARIOS ITEMS, TENDRIA QUE ITERAR POR CADA UNO DE ELLOS PARA ANIMARLOS, Y COMO ESO YA LO HACE LA PROPIA ANIMACION GSAP, ERA MAS SENCILLO PASARLE TODOS LOS ITEMS A ANIMAR DIRECTAMENTE.
   });
   navMujer.addEventListener("mouseleave", () => {
-    gsap.to(dropDownMujer, {
-      duration: 0.5,
-      height: 0,
-      border: "none",
-    });
-    gsap.to(".item-mujer", {
-      duration: 0.1,
-      opacity: 0,
-    });
+    cerrarDropdown(dropDownMujer, ".item-mujer");
   });
-})();
 
-(function () {
+  //INICIO DROPDOWN HOMBRE
   const navHombre = document.querySelector(".nav-hombre");
   const dropDownHombre = document.querySelector(".dropdown-hombre");
 
   navHombre.addEventListener("mouseover", () => {
-    gsap.to(dropDownHombre, {
-      duration: 0.5,
-      height: 200,
-      border: "1px solid rgb(228, 228, 228)",
-    });
-    gsap.to(".item-hombre", {
-      duration: 0.1,
-      delay: 0.3,
-      opacity: 1,
-    });
+    abrirDropdown(dropDownHombre, ".item-hombre");
   });
   navHombre.addEventListener("mouseleave", () => {
-    gsap.to(".item-hombre", {
-      duration: 0.2,
-      opacity: 0,
-    });
-    gsap.to(dropDownHombre, {
-      duration: 0.5,
-      height: 0,
-      border: "none",
-    });
+    cerrarDropdown(dropDownHombre, ".item-hombre");
   });
-})();
 
-(function () {
+  //INICIO DROPDOWN DESCUENTO
   const navDescuento = document.querySelector(".nav-descuento");
   const dropDownDescuento = document.querySelector(".dropdown-descuento");
 
   navDescuento.addEventListener("mouseover", () => {
-    gsap.to(dropDownDescuento, {
-      duration: 0.5,
-      height: 150,
-      border: "1px solid rgb(228, 228, 228)",
-    });
-    gsap.to(".item-descuento", {
-      duration: 0.1,
-      delay: 0.1,
-      opacity: 1,
-    });
+    abrirDropdown(dropDownDescuento, ".item-descuento");
   });
   navDescuento.addEventListener("mouseleave", () => {
-    gsap.to(dropDownDescuento, {
-      duration: 0.5,
-      height: 0,
-      border: "none",
-    });
-    gsap.to(".item-descuento", {
-      duration: 0.1,
-      opacity: 0,
-    });
+    cerrarDropdown(dropDownDescuento, ".item-descuento");
   });
-})();
 
-(function () {
+  //INICIO DROPDOWN NUEVO
   const navNuevo = document.querySelector(".nav-nuevo");
   const dropDownNuevo = document.querySelector(".dropdown-nuevo");
 
   navNuevo.addEventListener("mouseover", () => {
-    gsap.to(dropDownNuevo, {
-      duration: 0.5,
-      height: 200,
-      border: "1px solid rgb(228, 228, 228)",
-    });
-    gsap.to(".item-nuevo", {
-      duration: 0.1,
-      delay: 0.1,
-      opacity: 1,
-    });
+    abrirDropdown(dropDownNuevo, ".item-nuevo");
   });
   navNuevo.addEventListener("mouseleave", () => {
-    gsap.to(dropDownNuevo, {
-      duration: 0.5,
-      height: 0,
-      border: "none",
-    });
-    gsap.to(".item-nuevo", {
-      duration: 0.1,
-      opacity: 0,
-    });
+    cerrarDropdown(dropDownNuevo, ".item-nuevo");
   });
 })();
 
@@ -243,7 +199,6 @@ gsap.from(".body", {
       });
     });
   });
-
   btnCerrarModal.addEventListener("click", () => {
     gsap.to(modal, {
       duration: 0.3,
@@ -256,200 +211,101 @@ gsap.from(".body", {
   });
 })();
 
-//EVENT LISTENERS DESPLAZABLES
+//EVENT LISTENERS DESPLAZABLES (CART, SEARCH, FAV, USER)
 (function () {
+  //FUNCIONES PARA ABRIR Y CERRAR CADA UNO DE LOS DESPLAZABLES
+  const abrirDesplazable = (contenedorPadre, contenedorTarget) => {
+    gsap.to(contenedorPadre, {
+      right: 0,
+      opacity: 1,
+    });
+    gsap.to(contenedorTarget, {
+      display: "block",
+      width: "100%",
+    });
+    gsap.to(contenedorTarget, {
+      delay: 0.8,
+      opacity: 1,
+    });
+    gsap.to(bgOscuro, {
+      width: "100%",
+    });
+    gsap.to(bgOscuro, {
+      delay: 0.3,
+      opacity: 1,
+    });
+  };
+  const CerrarDesplazable = (contenedorPadre, contenedorTarget) => {
+    gsap.to(contenedorPadre, {
+      right: "-100%",
+      opacity: 0,
+    });
+    gsap.to(contenedorTarget, {
+      delay: 0.7,
+      display: "none",
+      width: 0,
+    });
+    gsap.to(contenedorTarget, {
+      opacity: 0,
+    });
+    gsap.to(bgOscuro, {
+      opacity: 0,
+    });
+    gsap.to(bgOscuro, {
+      delay: 0.5,
+      width: 0,
+    });
+  };
+
   const contenedorDesplegable = document.querySelector(
     ".desplazable-cart-search-fav-user"
   );
+  const bgOscuro = document.querySelector(".bg-black-desplazable");
   const btnCerrarDesplazable = document.querySelector(
     ".btn-cerrar-desplazable"
   );
-  const bgOscuro = document.querySelector(".bg-black-desplazable");
 
   //INICIO CART
   const btnAbrirCart = document.querySelector(".cart");
   const contenedorCart = document.querySelector(".desplazable-cart");
 
   btnAbrirCart.addEventListener("click", () => {
-    gsap.to(contenedorDesplegable, {
-      right: 0,
-      opacity: 1,
-    });
-    gsap.to(contenedorCart, {
-      display: "block",
-      width: "100%",
-    });
-    gsap.to(contenedorCart, {
-      delay: 0.8,
-      opacity: 1,
-    });
-    gsap.to(bgOscuro, {
-      width: "100%",
-    });
-    gsap.to(bgOscuro, {
-      delay: 0.3,
-      opacity: 1,
-    });
+    abrirDesplazable(contenedorDesplegable, contenedorCart);
   });
-
   btnCerrarDesplazable.addEventListener("click", () => {
-    gsap.to(contenedorDesplegable, {
-      right: "-100%",
-      opacity: 0,
-    });
-    gsap.to(contenedorCart, {
-      delay: 0.7,
-      display: "none",
-      width: 0,
-    });
-    gsap.to(contenedorCart, {
-      opacity: 0,
-    });
-    gsap.to(bgOscuro, {
-      opacity: 0,
-    });
-    gsap.to(bgOscuro, {
-      delay: 0.5,
-      width: 0,
-    });
+    CerrarDesplazable(contenedorDesplegable, contenedorCart);
   });
 
   //INICIO USER
   const btnAbrirUser = document.querySelector(".login");
   const contenedorUser = document.querySelector(".desplazable-user");
+
   btnAbrirUser.addEventListener("click", () => {
-    gsap.to(contenedorDesplegable, {
-      right: 0,
-      opacity: 1,
-    });
-    gsap.to(contenedorUser, {
-      display: "block",
-      width: "100%",
-    });
-    gsap.to(contenedorUser, {
-      delay: 0.8,
-      opacity: 1,
-    });
-    gsap.to(bgOscuro, {
-      width: "100%",
-    });
-    gsap.to(bgOscuro, {
-      delay: 0.3,
-      opacity: 1,
-    });
+    abrirDesplazable(contenedorDesplegable, contenedorUser);
   });
-
   btnCerrarDesplazable.addEventListener("click", () => {
-    gsap.to(contenedorDesplegable, {
-      right: "-100%",
-      opacity: 0,
-    });
-    gsap.to(contenedorUser, {
-      delay: 0.7,
-      display: "none",
-      width: 0,
-    });
-    gsap.to(contenedorUser, {
-      opacity: 0,
-    });
-    gsap.to(bgOscuro, {
-      opacity: 0,
-    });
-    gsap.to(bgOscuro, {
-      delay: 0.5,
-      width: 0,
-    });
+    CerrarDesplazable(contenedorDesplegable, contenedorUser);
   });
 
+  //INICIO SEARCH
   const btnAbrirSearch = document.querySelector(".buscar");
   const contenedorSearch = document.querySelector(".desplazable-search");
+
   btnAbrirSearch.addEventListener("click", () => {
-    gsap.to(contenedorDesplegable, {
-      right: 0,
-      opacity: 1,
-    });
-    gsap.to(contenedorSearch, {
-      display: "block",
-      width: "100%",
-    });
-    gsap.to(contenedorSearch, {
-      delay: 0.8,
-      opacity: 1,
-    });
-    gsap.to(bgOscuro, {
-      width: "100%",
-    });
-    gsap.to(bgOscuro, {
-      delay: 0.3,
-      opacity: 1,
-    });
+    abrirDesplazable(contenedorDesplegable, contenedorSearch);
   });
-
   btnCerrarDesplazable.addEventListener("click", () => {
-    gsap.to(contenedorDesplegable, {
-      right: "-100%",
-      opacity: 0,
-    });
-    gsap.to(contenedorSearch, {
-      delay: 0.7,
-      display: "none",
-      width: 0,
-    });
-    gsap.to(contenedorSearch, {
-      opacity: 0,
-    });
-    gsap.to(bgOscuro, {
-      opacity: 0,
-    });
-    gsap.to(bgOscuro, {
-      delay: 0.5,
-      width: 0,
-    });
+    CerrarDesplazable(contenedorDesplegable, contenedorSearch);
   });
 
-  const btnAbrirfavoritos = document.querySelector(".favorito");
-  const contenedorfavoritos = document.querySelector(".desplazable-fav");
-  btnAbrirfavoritos.addEventListener("click", () => {
-    gsap.to(contenedorDesplegable, {
-      right: 0,
-      opacity: 1,
-    });
-    gsap.to(contenedorfavoritos, {
-      display: "block",
-      width: "100%",
-    });
-    gsap.to(contenedorfavoritos, {
-      delay: 0.8,
-      opacity: 1,
-    });
-    gsap.to(bgOscuro, {
-      width: "100%",
-    });
-    gsap.to(bgOscuro, {
-      delay: 0.3,
-      opacity: 1,
-    });
-  });
+  //INICIO FAVORITOS
+  const btnAbrirFavoritos = document.querySelector(".favorito");
+  const contenedorFavoritos = document.querySelector(".desplazable-fav");
 
+  btnAbrirFavoritos.addEventListener("click", () => {
+    abrirDesplazable(contenedorDesplegable, contenedorFavoritos);
+  });
   btnCerrarDesplazable.addEventListener("click", () => {
-    gsap.to(contenedorDesplegable, {
-      right: "-100%",
-      opacity: 0,
-    });
-    gsap.to(contenedorfavoritos, {
-      delay: 0.7,
-      display: "none",
-      width: 0,
-    });
-    gsap.to(contenedorfavoritos, {
-      opacity: 0,
-    });
-    gsap.to(bgOscuro, {
-      opacity: 0,
-    });
-    gsap.to(bgOscuro, {
-      delay: 0.5,
-      width: 0,
-    });
+    CerrarDesplazable(contenedorDesplegable, contenedorFavoritos);
   });
 })();
