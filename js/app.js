@@ -406,4 +406,50 @@ gsap.from(".body", {
       width: 0,
     });
   });
+
+  const btnAbrirfavoritos = document.querySelector(".favorito");
+  const contenedorfavoritos = document.querySelector(".desplazable-fav");
+  btnAbrirfavoritos.addEventListener("click", () => {
+    gsap.to(contenedorDesplegable, {
+      right: 0,
+      opacity: 1,
+    });
+    gsap.to(contenedorfavoritos, {
+      display: "block",
+      width: "100%",
+    });
+    gsap.to(contenedorfavoritos, {
+      delay: 0.8,
+      opacity: 1,
+    });
+    gsap.to(bgOscuro, {
+      width: "100%",
+    });
+    gsap.to(bgOscuro, {
+      delay: 0.3,
+      opacity: 1,
+    });
+  });
+
+  btnCerrarDesplazable.addEventListener("click", () => {
+    gsap.to(contenedorDesplegable, {
+      right: "-100%",
+      opacity: 0,
+    });
+    gsap.to(contenedorfavoritos, {
+      delay: 0.7,
+      display: "none",
+      width: 0,
+    });
+    gsap.to(contenedorfavoritos, {
+      opacity: 0,
+    });
+    gsap.to(bgOscuro, {
+      opacity: 0,
+    });
+    gsap.to(bgOscuro, {
+      delay: 0.5,
+      width: 0,
+    });
+  });
 })();

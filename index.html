@@ -1080,7 +1080,12 @@
           <label for="password" class="login">contraseña<span>*</span></label>
           <div class="input">
             <span class="icono-login"><i class="fas fa-lock"></i></span>
-            <input class="input-user" type="password" name="password" id="" />
+            <input
+              class="input-user"
+              type="password"
+              name="password"
+              id="input-usuario"
+            />
           </div>
           <button class="btn-principal">login</button>
           <p class="recuperar-contraseña">
@@ -1101,13 +1106,54 @@
             class="input-search"
             type="search"
             name="buscar"
-            id=""
+            id="input-buscar"
             placeholder="buscar productos..."
           />
           <i class="fas fa-search icono-search"></i>
         </div>
       </div>
+      <div class="desplazable-fav">
+        <div class="barra-superior">
+          <h3 class="titulo-favoritos">tus favoritos</h3>
+        </div>
+        <div class="contenido-fav">
+          <div class="ejemplo-item">
+            <div class="img-item">
+              <img src="./images/ropa-hombre/hoodie-mini.webp" alt="" />
+            </div>
+            <div class="descripcion-item">
+              <h2 class="nombre-producto-categorias">buzo nike</h2>
+              <p class="precio-producto-categorias">$1200</p>
+            </div>
+            <div class="editar-item">
+              <div class="contenedor-color-tamaño">
+                <span class="color-item"></span
+                ><span class="tamaño-item">S</span>
+              </div>
+              <span class="remover">remover</span>
+            </div>
+          </div>
+          <div class="ejemplo-item">
+            <div class="img-item">
+              <img src="./images/ropa-hombre/hoodie-mini.webp" alt="" />
+            </div>
+            <div class="descripcion-item">
+              <h2 class="nombre-producto-categorias">buzo nike</h2>
+              <p class="precio-producto-categorias">$1200</p>
+            </div>
+            <div class="editar-item">
+              <div class="contenedor-color-tamaño">
+                <span class="color-item"></span
+                ><span class="tamaño-item">S</span>
+              </div>
+              <span class="remover">remover</span>
+            </div>
+          </div>
+          <button class="btn-principal">remover todo</button>
+        </div>
+      </div>
     </div>
+
     <div class="modal-producto">
       <div class="contenedor-modal-producto">
         <div class="btn-cerrar-modal">
