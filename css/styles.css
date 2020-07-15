@@ -519,15 +519,15 @@ img {
 }
 
 .contenedor-header:nth-child(1) {
-  background: url("../images/images-slider/slider02.jpg") center/cover no-repeat;
+  background: url("../images/images-slider/slider02.webp") center/cover no-repeat;
 }
 
 .contenedor-header:nth-child(2) {
-  background: url("../images/images-slider/slider03.jpg") center/cover no-repeat;
+  background: url("../images/images-slider/slider03.webp") center/cover no-repeat;
 }
 
 .contenedor-header:nth-child(3) {
-  background: url("../images/images-slider/h2-new-slider3.jpg") center/cover no-repeat;
+  background: url("../images/images-slider/slider01.webp") center/cover no-repeat;
 }
 
 .btn-header-next,
@@ -1712,7 +1712,7 @@ img {
 .img-productos-categorias {
   width: 30%;
   height: 100%;
-  background: #dbdbdb;
+  background: #f5f5f5;
 }
 
 .descripcion-productos-categorias {
