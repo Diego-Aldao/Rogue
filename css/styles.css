@@ -2167,7 +2167,6 @@ img {
 .contenido-cart,
 .contenido-fav {
   width: 100%;
-  height: calc(100% - 70px);
   margin-top: 30px;
 }
 
@@ -2773,5 +2772,12 @@ img {
   border: 2px solid var(--color-principal);
   font-weight: bolder;
   margin-left: 30px;
+}
+
+@media (min-width: 1024px) {
+  .desplazable-cart,
+  .desplazable-user {
+    overflow: hidden;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

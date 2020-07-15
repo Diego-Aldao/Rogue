@@ -1434,6 +1434,7 @@ img {
   opacity: 0;
   overflow: scroll; //AÑADIDO EN LOS HIJOS DEL DESPLAZABLE PARA NO AFECTAR EL BOTON CERRAR
 }
+
 .barra-superior,
 .titulo-carrito,
 .btn-cerrar {
@@ -1456,7 +1457,6 @@ img {
 .contenido-cart,
 .contenido-fav {
   width: 100%;
-  height: calc(100% - 70px);
   margin-top: 30px;
   .ejemplo-item {
     width: 100%;
@@ -1754,5 +1754,11 @@ img {
     border: 2px solid var(--color-principal);
     font-weight: bolder;
     margin-left: 30px;
+  }
+}
+@media (min-width: 1024px) {
+  .desplazable-cart,
+  .desplazable-user {
+    overflow: hidden;
   }
 }

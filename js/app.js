@@ -66,11 +66,6 @@ gsap.from(".mini-texto", {
   delay: 0.6,
 });
 
-gsap.from(".body", {
-  duration: 2,
-  opacity: 0,
-});
-
 //EVENT LISTENERS DEL MENU PRINCIPAL DESPLEGABLE
 (function () {
   const menuDesplegable = document.querySelector(".menu-desplegable");
@@ -93,9 +88,6 @@ gsap.from(".body", {
   });
 
   botonCerrar.addEventListener("click", () => {
-    gsap.to("body", {
-      opacity: 1,
-    });
     gsap.to(menuDesplegable, {
       duration: 0.5,
       left: "-100vw",
