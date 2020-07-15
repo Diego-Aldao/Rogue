@@ -628,8 +628,7 @@ img {
   width: 50px;
   height: 75%;
   @include flexbox(column, space-between, flex-end);
-  padding: 5px;
-  overflow: hidden;
+  padding: 10px;
 }
 
 .btn-compra {
@@ -638,20 +637,33 @@ img {
   @include flexbox(row, center, center);
   border-radius: 50%;
   color: white;
+  transition: 0.5s ease-in-out 0.5s;
   font-size: 1rem;
 }
 .fav,
 .comprar {
   background: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
+  position: relative;
+  cursor: pointer;
 }
 .fav {
-  position: relative;
-  overflow: hidden;
   border-radius: 0;
+  background: none;
+  transition: 0.5s ease-in-out 0.5s;
+  i {
+    height: 100%;
+    width: 100%;
+    background: white;
+    @include flexbox(row, center, center);
+    margin-left: auto;
+    transition: all 0.3s ease-in-out;
+  }
 }
 .ver-detalle {
   background: black;
+  position: relative;
+  cursor: pointer;
 }
 
 .comprar {
@@ -660,23 +672,46 @@ img {
 }
 
 //ANIMACIONES BOTONES ITEM COMPRA
-.fav:after {
-  content: "añadir";
+.popup-btn-compra {
   position: absolute;
-  top: 0;
-  right: 0;
-  z-index: -1;
-  height: 100%;
-  width: 120px;
-  @include flexbox(row, flex-start, center);
-  overflow: hidden;
-  padding: 0 15px;
-  background: white;
-  font-family: var(--fuente-principal);
+  right: 60px;
+  height: 80%;
+  width: 125px;
+  @include flexbox(row, center, center);
+  background-color: black;
+  font-family: var(--fuente-secundaria);
   text-transform: capitalize;
+  font-size: 0.8rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  color: white;
+  font-weight: 500;
+  z-index: 50;
 }
-.fav:hover .fav:after {
-  width: 120px;
+.popup-btn-compra:after {
+  content: "";
+  position: absolute;
+  right: -5px;
+  top: 9px;
+  width: 10px;
+  height: 10px;
+  background: black;
+  transform: rotate(45deg);
+  background: black;
+}
+.fav:hover,
+.ver-detalle:hover,
+.comprar:hover {
+  .popup-btn-compra {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.fav:hover {
+  i {
+    color: red;
+  }
 }
 
 .descripcion-productos {

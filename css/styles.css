@@ -864,8 +864,7 @@ img {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  padding: 5px;
-  overflow: hidden;
+  padding: 10px;
 }
 
 .btn-compra {
@@ -886,6 +885,8 @@ img {
           align-items: center;
   border-radius: 50%;
   color: white;
+  -webkit-transition: 0.5s ease-in-out 0.5s;
+  transition: 0.5s ease-in-out 0.5s;
   font-size: 1rem;
 }
 
@@ -893,31 +894,21 @@ img {
 .comprar {
   background: white;
   color: black;
+  position: relative;
+  cursor: pointer;
 }
 
 .fav {
-  position: relative;
-  overflow: hidden;
   border-radius: 0;
+  background: none;
+  -webkit-transition: 0.5s ease-in-out 0.5s;
+  transition: 0.5s ease-in-out 0.5s;
 }
 
-.ver-detalle {
-  background: black;
-}
-
-.comprar {
-  border: 2px solid #ff4e4e;
-  font-size: 0.6rem;
-}
-
-.fav:after {
-  content: "añadir";
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: -1;
+.fav i {
   height: 100%;
-  width: 120px;
+  width: 100%;
+  background: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -925,21 +916,81 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  overflow: hidden;
-  padding: 0 15px;
-  background: white;
-  font-family: var(--fuente-principal);
-  text-transform: capitalize;
+  margin-left: auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-.fav:hover .fav:after {
-  width: 120px;
+.ver-detalle {
+  background: black;
+  position: relative;
+  cursor: pointer;
+}
+
+.comprar {
+  border: 2px solid #ff4e4e;
+  font-size: 0.6rem;
+}
+
+.popup-btn-compra {
+  position: absolute;
+  right: 60px;
+  height: 80%;
+  width: 125px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black;
+  font-family: var(--fuente-secundaria);
+  text-transform: capitalize;
+  font-size: 0.8rem;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  color: white;
+  font-weight: 500;
+  z-index: 50;
+}
+
+.popup-btn-compra:after {
+  content: "";
+  position: absolute;
+  right: -5px;
+  top: 9px;
+  width: 10px;
+  height: 10px;
+  background: black;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  background: black;
+}
+
+.fav:hover .popup-btn-compra,
+.ver-detalle:hover .popup-btn-compra,
+.comprar:hover .popup-btn-compra {
+  visibility: visible;
+  opacity: 1;
+}
+
+.fav:hover i {
+  color: red;
 }
 
 .descripcion-productos {
