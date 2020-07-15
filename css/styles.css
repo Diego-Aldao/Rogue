@@ -940,33 +940,21 @@ img {
 
 .popup-btn-compra {
   position: absolute;
+  z-index: 50;
   right: 60px;
   height: 80%;
   width: 125px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
   background-color: black;
+  color: white;
   font-family: var(--fuente-secundaria);
   text-transform: capitalize;
   font-size: 0.8rem;
-  opacity: 0;
-  visibility: hidden;
+  font-weight: 500;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  color: white;
-  font-weight: 500;
-  z-index: 50;
 }
 
 .popup-btn-compra:after {
@@ -979,14 +967,30 @@ img {
   background: black;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-  background: black;
 }
 
-.fav:hover .popup-btn-compra,
-.ver-detalle:hover .popup-btn-compra,
-.comprar:hover .popup-btn-compra {
-  visibility: visible;
-  opacity: 1;
+@media (min-width: 480px) {
+  .popup-btn-compra {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .fav:hover .popup-btn-compra,
+  .ver-detalle:hover .popup-btn-compra,
+  .comprar:hover .popup-btn-compra {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 .fav:hover i {
@@ -2192,7 +2196,7 @@ img {
 .contenido-fav .img-item {
   width: 50px;
   height: 50px;
-  background: #dfdfdf;
+  background: #f5f5f5;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -2721,8 +2725,13 @@ img {
   display: none;
 }
 
-.desplazable-fav .ejemplo-item {
-  background: #f8f8f8;
+.desplazable-fav .img-item {
+  min-width: 50px;
+  height: 50px;
+}
+
+.desplazable-fav .descripcion-item {
+  width: 50%;
 }
 
 .desplazable-fav .color-item {
@@ -2730,12 +2739,12 @@ img {
   margin-bottom: 15px;
 }
 
-.desplazable-fav .color-item:nth-child(2) {
-  background: #7a4100;
+.desplazable-fav .color-2 {
+  background: black;
 }
 
 .desplazable-fav .editar-item {
-  width: 50%;
+  width: 30%;
   height: 100%;
 }
 
