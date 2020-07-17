@@ -438,9 +438,9 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   overflow: hidden;
 }
 
@@ -530,16 +530,43 @@ img {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  padding-top: 40px;
+  padding-top: 20px;
   position: relative;
   right: -100%;
 }
 
 .menu-desplegable .categoria-menu-desplegable {
-  width: 75%;
-  height: 65px;
+  position: relative;
+  width: 65%;
+  height: 95px;
   margin: 15px auto;
-  background: black;
+  background: url("/images/imagenes-desplazable-categorias/woman-in-red-long-sleeve-shirt-holding-her-clothes-3794129.webp") center/cover no-repeat;
+}
+
+.menu-desplegable .categoria-menu-desplegable:nth-child(2) {
+  background: url("/images/imagenes-desplazable-categorias/person-wearing-black-leather-strap-round-analog-watch-3432053.webp") center/cover no-repeat;
+}
+
+.menu-desplegable .categoria-menu-desplegable:nth-child(3) {
+  background: url("/images/imagenes-desplazable-categorias/black-framed-eyeglasses-on-white-jacket-and-blue-denim-934070.webp") center/cover no-repeat;
+}
+
+.menu-desplegable .categoria-menu-desplegable:nth-child(4) {
+  background: url("/images/imagenes-desplazable-categorias/clothes-clothing-colors-shirts-581087.webp") center/cover no-repeat;
+}
+
+.menu-desplegable .categoria-menu-desplegable:nth-child(5) {
+  background: url("/images/imagenes-desplazable-categorias/photo-of-discount-sign-2529787.webp") center/cover no-repeat;
+}
+
+.menu-desplegable .categoria-menu-desplegable:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.473);
 }
 
 .menu-desplegable .nombre-categoria {
@@ -548,6 +575,8 @@ img {
   font-family: var(--fuente-principal);
   font-style: italic;
   font-weight: bolder;
+  position: relative;
+  z-index: 2;
 }
 
 @media (min-width: 768px) {
@@ -681,13 +710,6 @@ img {
   margin: 40px auto;
 }
 
-.hero-movil {
-  width: 100%;
-  max-width: 450px;
-  height: 450px;
-  margin: 0 auto;
-}
-
 .hero-compras {
   width: 30%;
   height: 650px;
@@ -783,6 +805,7 @@ img {
   color: var(--color-texto-principal);
   font-family: var(--fuente-principal);
   font-weight: normal;
+  cursor: pointer;
 }
 
 .contenido-hombre {
@@ -1034,12 +1057,6 @@ img {
   transition: all 0.3s ease-in-out;
 }
 
-.ver-detalle {
-  background: black;
-  position: relative;
-  cursor: pointer;
-}
-
 .comprar {
   border: 2px solid #ff4e4e;
   font-size: 0.6rem;
@@ -1093,7 +1110,6 @@ img {
             align-items: center;
   }
   .fav:hover .popup-btn-compra,
-  .ver-detalle:hover .popup-btn-compra,
   .comprar:hover .popup-btn-compra {
     visibility: visible;
     opacity: 1;
@@ -1151,7 +1167,6 @@ img {
 }
 
 @media (min-width: 500px) {
-  .ver-detalle,
   .comprar {
     margin: 0;
   }
@@ -1160,9 +1175,6 @@ img {
 @media (min-width: 850px) {
   .contenedor-slider {
     width: 59%;
-  }
-  .hero-movil {
-    display: none;
   }
   .btn-hombre-izq,
   .btn-hombre-der {
@@ -2469,6 +2481,7 @@ img {
   text-decoration: underline;
   color: red;
   text-transform: capitalize;
+  cursor: pointer;
 }
 
 .contenido-cart .terminar-compra,
