@@ -249,7 +249,7 @@ window.onload = () => {
   (function () {
     const modal = document.querySelector(".modal-producto");
     const btnCerrarModal = document.querySelector(".btn-cerrar-modal");
-    const btnAbrirModal = document.querySelectorAll(".ver-detalle");
+    const btnAbrirModal = document.querySelectorAll(".img-item-compra");
 
     btnAbrirModal.forEach((boton) => {
       boton.addEventListener("click", () => {
