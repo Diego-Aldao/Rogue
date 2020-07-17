@@ -49,21 +49,90 @@
               <span class="nombre-categoria">categorias</span>
             </div>
           </div>
-          <div class="contenido-categorias-menu-desplegable">
-            <div class="categoria-menu-desplegable">
-              <span class="nombre-categoria">mujer</span>
+          <div class="contenido-desplazable">
+            <div class="contenido-principal-menu-desplegable">
+              <div class="contenido-search search-movil">
+                <input
+                  class="input-search"
+                  type="search"
+                  name="buscar"
+                  id="input-buscar"
+                  placeholder="buscar productos..."
+                />
+                <i class="fas fa-search icono-search"></i>
+              </div>
+              <div class="favoritos-movil">
+                <h3 class="titulo-favoritos-movil">
+                  tus favoritos
+                  <i class="fas fa-angle-down flechita-favoritos"></i>
+                </h3>
+                <div
+                  class="contenido-fav favoritos-menu-desplazable"
+                  style="top: -80px;"
+                >
+                  <!--LA SEGUNDA CLAZE PARA ANIMARLA CON GSAP SIN QUE INTERVENGA LA PRIMERA, Y EL ESTILO INLINE PARA QUE FUNCIONE LA ANIMACION GSAP-->
+                  <div class="ejemplo-item">
+                    <div class="img-item">
+                      <img
+                        src="./images/ropa-hombre/hoodie01mini.webp"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="descripcion-item">
+                      <h2 class="nombre-producto-categorias">buzo fila</h2>
+                      <p class="precio-producto-categorias">$1729</p>
+                    </div>
+                    <div class="editar-item">
+                      <div class="contenedor-color-tamaño">
+                        <span class="color-item"></span
+                        ><span class="tamaño-item">S</span>
+                      </div>
+                      <span class="remover">remover</span>
+                    </div>
+                  </div>
+                  <div class="ejemplo-item">
+                    <div class="img-item">
+                      <img
+                        src="./images/ropa-hombre/sneaker02mini.webp"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="descripcion-item">
+                      <h2 class="nombre-producto-categorias">
+                        zapatillas nike
+                      </h2>
+                      <p class="precio-producto-categorias">$2999</p>
+                    </div>
+                    <div class="editar-item">
+                      <div class="contenedor-color-tamaño">
+                        <span class="color-item color-2"></span
+                        ><span class="tamaño-item">S</span>
+                      </div>
+                      <span class="remover">remover</span>
+                    </div>
+                  </div>
+                  <button class="btn-principal">remover todo</button>
+                </div>
+              </div>
             </div>
-            <div class="categoria-menu-desplegable">
-              <span class="nombre-categoria">hombre</span>
-            </div>
-            <div class="categoria-menu-desplegable">
-              <span class="nombre-categoria">nuevo</span>
-            </div>
-            <div class="categoria-menu-desplegable">
-              <span class="nombre-categoria">mas vendido</span>
-            </div>
-            <div class="categoria-menu-desplegable">
-              <span class="nombre-categoria">mejor clasificado</span>
+            <div class="contenido-categorias-menu-desplegable">
+              <div class="categoria-menu-desplegable">
+                <span class="nombre-categoria">mujer</span>
+              </div>
+              <div class="categoria-menu-desplegable">
+                <span class="nombre-categoria">hombre</span>
+              </div>
+              <div class="categoria-menu-desplegable">
+                <span class="nombre-categoria">nuevo</span>
+              </div>
+              <div class="categoria-menu-desplegable">
+                <span class="nombre-categoria">mas vendido</span>
+              </div>
+              <div class="categoria-menu-desplegable">
+                <span class="nombre-categoria">mejor clasificado</span>
+              </div>
             </div>
           </div>
         </div>
@@ -87,7 +156,6 @@
         </div>
         <div class="menu-oculto">
           <ul class="contenedor-link">
-            <li class="links"><a class="current" href="#">inicio</a></li>
             <li class="links nav-mujer">
               <a href="#">mujeres</a>
               <div class="dropdown dropdown-mujer">
@@ -156,7 +224,7 @@
               otoño &#38; <br />
               invierno 2020
             </h1>
-            <button class="btn-principal">
+            <button class="btn-principal btn-header">
               comprar
             </button>
           </div>
@@ -183,7 +251,7 @@
               primavera &#38; <br />
               verano 2020
             </h1>
-            <button class="btn-principal">
+            <button class="btn-principal btn-header">
               comprar
             </button>
           </div>
@@ -1316,12 +1384,14 @@
           <h2 class="titulo-logueo">ingresar</h2>
         </div>
         <div class="contenido-login">
-          <label for="user" class="login">usuario<span>*</span></label>
+          <label for="user" class="label-login">usuario<span>*</span></label>
           <div class="input">
             <span class="icono-login"><i class="fas fa-user"></i></span>
             <input class="input-user" type="text" name="user" id="" />
           </div>
-          <label for="password" class="login">contraseña<span>*</span></label>
+          <label for="password" class="label-login"
+            >contraseña<span>*</span></label
+          >
           <div class="input">
             <span class="icono-login"><i class="fas fa-lock"></i></span>
             <input

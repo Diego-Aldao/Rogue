@@ -1,5 +1,24 @@
-//SWIPER PARA EL HEADER
+//ANIMACIONES CON GSAP PARA EL HEADER
+gsap.to(".titulos-principales", {
+  duration: 1,
+  left: 0,
+  opacity: 1,
+  delay: 0.2,
+});
+gsap.to(".btn-header", {
+  duration: 1,
+  bottom: 0,
+  opacity: 1,
+  delay: 0.7,
+});
+
+gsap.to(".mini-texto", {
+  duration: 1.6,
+  opacity: 1,
+  delay: 0.6,
+});
 window.onload = () => {
+  //SWIPER PARA EL HEADER
   var swiper = new Swiper(".swiper-container", {
     spaceBetween: 30,
     effect: "fade",
@@ -48,25 +67,6 @@ window.onload = () => {
     },
   });
 
-  //ANIMACIONES CON GSAP PARA EL HEADER
-  gsap.from(".titulos-principales", {
-    duration: 1,
-    x: -150,
-    opacity: 0,
-    delay: 0.2,
-  });
-  gsap.from(".btn-principal", {
-    duration: 1,
-    y: 100,
-    opacity: 0,
-    delay: 0.7,
-  });
-  gsap.from(".mini-texto", {
-    duration: 1.6,
-    opacity: 0,
-    delay: 0.6,
-  });
-
   //EVENT LISTENERS DEL MENU PRINCIPAL DESPLEGABLE
   (function () {
     const menuDesplegable = document.querySelector(".menu-desplegable");
@@ -100,6 +100,72 @@ window.onload = () => {
         delay: 0.5,
         width: 0,
       });
+    });
+
+    //INICIO SECCION BOTONES
+    const btnMenu = document.querySelector(".menu-global");
+    const btnCategorias = document.querySelector(".menu-categorias");
+    const contenidoGlobal = document.querySelector(
+      ".contenido-principal-menu-desplegable"
+    );
+    const contenidoCategorias = document.querySelector(
+      ".contenido-categorias-menu-desplegable"
+    );
+
+    btnMenu.addEventListener("click", () => {
+      gsap.to(contenidoGlobal, {
+        duration: 0.3,
+        left: 0,
+        width: "100%",
+      });
+      gsap.to(contenidoCategorias, {
+        duration: 0.3,
+        right: "-100%",
+        width: 0,
+      });
+    });
+
+    btnCategorias.addEventListener("click", () => {
+      gsap.to(contenidoGlobal, {
+        duration: 0.3,
+        left: "-100%",
+        width: 0,
+      });
+      gsap.to(contenidoCategorias, {
+        duration: 0.3,
+        right: 0,
+        width: "100%",
+      });
+    });
+
+    //INICIO SECCION FAVORITOS
+    const titulo = document.querySelector(".titulo-favoritos-movil");
+    const contenedorFavoritos = document.querySelector(
+      ".favoritos-menu-desplazable"
+    );
+    const flecha = document.querySelector(".flechita-favoritos");
+    titulo.addEventListener("click", () => {
+      if (contenedorFavoritos.style.top == "-80px") {
+        gsap.to(flecha, {
+          duration: 0.3,
+          transform: "rotate(180deg)",
+        });
+        gsap.to(contenedorFavoritos, {
+          duration: 0.1,
+          top: 0,
+          opacity: 1,
+        });
+      } else {
+        gsap.to(flecha, {
+          duration: 0.3,
+          transform: "rotate(0deg)",
+        });
+        gsap.to(contenedorFavoritos, {
+          duration: 0.1,
+          top: -80,
+          opacity: 0,
+        });
+      }
     });
   })();
 

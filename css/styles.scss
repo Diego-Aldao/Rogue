@@ -196,7 +196,7 @@ img {
   }
 }
 
-@media (min-width: 450px) {
+@media (min-width: 768px) {
   .nav-principal {
     .buscar,
     .favorito,
@@ -204,13 +204,6 @@ img {
       @include flexbox(row, center, center);
     }
 
-    .logo {
-      margin: 0 auto;
-    }
-  }
-}
-@media (min-width: 850px) {
-  .nav-principal {
     .logo {
       margin: 0;
     }
@@ -324,12 +317,64 @@ img {
     color: black;
   }
 
-  .contenido-categorias-menu-desplegable {
+  .contenido-desplazable {
+    @include flexbox(row, center, center);
+    overflow: hidden;
+  }
+
+  .contenido-principal-menu-desplegable {
     width: 100%;
+    height: calc(100% - 120px);
+    padding-top: 20px;
+    position: relative;
+    left: 0px;
+    .search-movil {
+      width: 95%;
+      height: 40px;
+    }
+    .favoritos-movil {
+      margin-top: 40px;
+    }
+    .titulo-favoritos-movil {
+      width: 100%;
+      @include flexbox(row, center, center);
+      font-size: 1.4rem;
+      height: 50px;
+      background: white;
+      border-top: 1px solid rgb(228, 228, 228);
+      border-bottom: 1px solid rgb(228, 228, 228);
+      position: relative;
+      z-index: 2;
+      i {
+        height: 100%;
+        @include flexbox(row, center, center);
+        width: 50px;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out; //PARA LA ANIMACION DE LA FLECHA, CON GSAP SE BUGUEA
+      }
+    }
+    .btn-principal {
+      width: 80%;
+      margin: 0 10vw;
+    }
+    .contenido-fav {
+      position: relative;
+      top: -80px;
+      overflow: hidden;
+      opacity: 0;
+      z-index: 0;
+      margin-top: 0;
+    }
+  }
+
+  .contenido-categorias-menu-desplegable {
+    width: 0;
     height: calc(100% - 120px);
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 40px;
+    position: relative;
+    right: -100%;
   }
 
   .categoria-menu-desplegable {
@@ -348,7 +393,7 @@ img {
 }
 
 //MEDIA QUERYS MENU DESPLEGABLE
-@media (min-width: 850px) {
+@media (min-width: 768px) {
   .menu-desplegable {
     display: none;
   }
@@ -367,6 +412,7 @@ img {
   height: 80%;
   margin-left: 5%;
   padding-top: 15px;
+  overflow: hidden;
 }
 .mini-texto {
   padding: 15px 0;
@@ -376,6 +422,7 @@ img {
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: clamp(0.8rem, 1.8vw, 1.6rem);
+  opacity: 0;
 }
 .titulos-principales {
   margin-bottom: 15px;
@@ -384,6 +431,14 @@ img {
   font-weight: 900;
   text-transform: capitalize;
   font-size: clamp(2.6rem, 5vw, 6rem);
+  position: relative;
+  left: -150px;
+  opacity: 0;
+}
+.btn-header {
+  position: relative;
+  bottom: -100px;
+  opacity: 0;
 }
 
 //SWIPER PRINCIPAL / HEADER
@@ -1593,58 +1648,6 @@ img {
   display: none;
   opacity: 0;
   overflow: scroll; //AÑADIDO EN LOS HIJOS DEL DESPLAZABLE PARA NO AFECTAR EL BOTON CERRAR
-  .barra-superior {
-    width: 100%;
-    height: 60px;
-    @include flexbox(row, center, center);
-    border-bottom: 1px solid rgb(214, 214, 214);
-  }
-  .titulo-logueo {
-    font-family: var(--fuente-principal);
-    font-size: 1.5rem;
-    text-transform: uppercase;
-  }
-  .contenido-login {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 25px 10px;
-    border-bottom: 1px solid rgb(221, 221, 221);
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  .login {
-    width: 100%;
-    height: 25px;
-    font-family: var(--fuente-principal);
-    text-transform: capitalize;
-    span {
-      color: rgb(255, 0, 0);
-    }
-  }
-  .input {
-    width: 100%;
-    height: 35px;
-    @include flexbox(row, center, center);
-    margin: 5px 0 15px;
-    max-width: 400px;
-  }
-  .icono-login {
-    display: block;
-    width: 35px;
-    height: 100%;
-    @include flexbox(row, center, center);
-    color: var(--color-texto-secundario);
-    border: 1px solid rgb(230, 230, 230);
-  }
-  .input-user {
-    width: calc(100% - 35px);
-    height: 35px;
-    border: none;
-    background: rgb(241, 241, 241);
-    padding: 0 10px;
-    font-size: 1.1rem;
-  }
   .btn-principal {
     width: 100%;
     align-self: center;
@@ -1652,35 +1655,89 @@ img {
     font-size: 0.9rem;
     max-width: 350px;
   }
-  .recuperar-contraseña,
-  .crear-cuenta {
-    width: 100%;
-    height: 55px;
-    font-family: var(--fuente-principal);
-    font-size: 1.1rem;
-    text-transform: capitalize;
-    text-align: center;
-  }
-  .recuperar,
-  .crear {
-    text-decoration: underline;
-    color: red;
-    cursor: pointer;
-  }
-  .contenido-registro {
-    width: 100%;
-    padding: 25px 10px;
-    @include flexbox(column, center, center);
-  }
-  .icono-signup {
-    width: 45px;
-    height: 45px;
-    @include flexbox(row, center, center);
-    margin-bottom: 10px;
-    font-size: 2.2rem;
-    color: var(--color-texto-secundario);
+}
+.barra-superior {
+  width: 100%;
+  height: 60px;
+  @include flexbox(row, center, center);
+  border-bottom: 1px solid rgb(214, 214, 214);
+}
+.titulo-logueo {
+  font-family: var(--fuente-principal);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.contenido-login {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 10px;
+  border-bottom: 1px solid rgb(221, 221, 221);
+  max-width: 400px;
+  margin: 0 auto;
+}
+.label-login {
+  width: 100%;
+  height: 25px;
+  font-family: var(--fuente-principal);
+  text-transform: capitalize;
+  span {
+    color: rgb(255, 0, 0);
   }
 }
+.input {
+  width: 100%;
+  height: 35px;
+  @include flexbox(row, center, center);
+  margin: 5px 0 15px;
+  max-width: 400px;
+}
+.icono-login {
+  display: block;
+  width: 35px;
+  height: 100%;
+  @include flexbox(row, center, center);
+  color: var(--color-texto-secundario);
+  border: 1px solid rgb(230, 230, 230);
+}
+.input-user {
+  width: calc(100% - 35px);
+  height: 35px;
+  border: none;
+  background: rgb(241, 241, 241);
+  padding: 0 10px;
+  font-size: 1.1rem;
+}
+
+.recuperar-contraseña,
+.crear-cuenta {
+  width: 100%;
+  height: 55px;
+  font-family: var(--fuente-principal);
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+.recuperar,
+.crear {
+  text-decoration: underline;
+  color: red;
+  cursor: pointer;
+}
+.contenido-registro {
+  width: 100%;
+  padding: 25px 10px;
+  @include flexbox(column, center, center);
+}
+.icono-signup {
+  width: 45px;
+  height: 45px;
+  @include flexbox(row, center, center);
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+  color: var(--color-texto-secundario);
+}
+
 //DESPLAZABLE SEARCH
 
 .desplazable-search {
@@ -1689,30 +1746,30 @@ img {
   padding: 80px 10px 0;
   opacity: 0;
   display: none;
-  .contenido-search {
-    width: 100%;
-    height: 50px;
-    @include flexbox(row, center, center);
-    max-width: 450px;
-    margin: 0 auto;
-  }
-  .input-search {
-    width: calc(100% - 55px);
-    height: 100%;
-    border: none;
-    border-bottom: 2px solid black;
-    padding: 0 10px;
-    font-size: 1.1rem;
-    text-transform: capitalize;
-    font-family: var(--fuente-secundaria);
-  }
-  .icono-search {
-    display: block;
-    width: 55px;
-    height: 100%;
-    @include flexbox(row, center, center);
-    font-size: 1.3rem;
-  }
+}
+.contenido-search {
+  width: 100%;
+  height: 50px;
+  @include flexbox(row, center, center);
+  max-width: 450px;
+  margin: 0 auto;
+}
+.input-search {
+  width: calc(100% - 55px);
+  height: 100%;
+  border: none;
+  border-bottom: 2px solid black;
+  padding: 0 10px;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  font-family: var(--fuente-secundaria);
+}
+.icono-search {
+  display: block;
+  width: 55px;
+  height: 100%;
+  @include flexbox(row, center, center);
+  font-size: 1.3rem;
 }
 
 //DESPLAZABLE FAV
@@ -1724,29 +1781,6 @@ img {
   @include flexbox(column, flex-start, flex-start);
   opacity: 0;
   display: none;
-  .img-item {
-    min-width: 50px;
-    height: 50px;
-  }
-  .descripcion-item {
-    width: 50%;
-  }
-  .color-item {
-    background: yellow;
-    margin-bottom: 15px;
-  }
-  .color-2 {
-    background: rgb(0, 0, 0);
-  }
-  .editar-item {
-    width: 30%;
-    height: 100%;
-  }
-  .contenedor-color-tamaño {
-    width: 100%;
-    height: 50%;
-    @include flexbox(column, space-evenly, center);
-  }
   .btn-principal {
     width: 80%;
     background: none;
@@ -1756,6 +1790,30 @@ img {
     margin-left: 30px;
   }
 }
+.img-item {
+  min-width: 50px;
+  height: 50px;
+}
+.descripcion-item {
+  width: 50%;
+}
+.color-item {
+  background: yellow;
+  margin-bottom: 15px;
+}
+.color-2 {
+  background: rgb(0, 0, 0);
+}
+.editar-item {
+  width: 30%;
+  height: 100%;
+}
+.contenedor-color-tamaño {
+  width: 100%;
+  height: 50%;
+  @include flexbox(column, space-evenly, center);
+}
+
 @media (min-width: 1024px) {
   .desplazable-cart,
   .desplazable-user {
