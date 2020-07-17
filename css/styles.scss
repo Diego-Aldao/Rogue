@@ -1,13 +1,10 @@
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
-/*estrella vacia <i class="far fa-star"></i>
-  estrella a la mitad llena <i class="fas fa-star-half"></i> */
 
 //ORDEN DE LAS PROPIEDADES
-
 /*
    Layout: (position, float, index)
    Display/box-model: (width, display, margin, padding)
@@ -179,6 +176,8 @@ img {
   .cart,
   .favorito,
   .buscar {
+    height: 100%;
+    position: relative;
     width: 50px;
     font-size: 1.3rem;
     transition: all 0.3s ease-in-out;
@@ -193,6 +192,20 @@ img {
   .buscar:hover,
   .favorito:hover {
     color: var(--color-principal);
+  }
+
+  .cantidad-cart-fav {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background: red;
+    right: 8px;
+    top: 12px;
+    border-radius: 50%;
+    @include flexbox(row, center, center);
+    font-size: 0.6rem;
+    color: white;
+    font-weight: bold;
   }
 }
 
@@ -314,7 +327,19 @@ img {
     width: 45%;
     height: 40px;
     background: var(--color-principal);
-    color: black;
+    color: white;
+    font-size: 1.1rem;
+    font-family: var(--fuente-principal);
+    font-style: italic;
+    font-weight: bolder;
+    position: relative;
+    z-index: 2;
+    text-transform: capitalize;
+    border: none;
+  }
+  .menu-global:focus,
+  .menu-categorias:focus {
+    background: black;
   }
 
   .contenido-desplazable {
@@ -816,6 +841,7 @@ img {
   font-family: var(--fuente-principal);
   font-size: 1.1rem;
   font-weight: 100;
+  text-transform: capitalize;
 }
 .precio-producto {
   font-weight: bolder;
@@ -1139,19 +1165,21 @@ img {
   @include flexbox(column, center, center);
 }
 .texto-descuento .mini-texto {
-  width: 100%;
-  height: 50%;
-  @include flexbox(row, flex-start, center);
   padding: 0 0 5px 10px;
   letter-spacing: 0px;
   font-size: clamp(0.8rem, 3vw, 1.5rem);
   text-transform: capitalize;
 } //heredar las propiedades del mini texto del header y cambiarle las necesarias para adaptarla al texto descuento
 
+.texto-descuento .mini-texto,
 .titulos-descuentos {
   width: 100%;
   height: 50%;
-  @include flexbox(row, flex-start, flex-start);
+  @include flexbox(row, flex-start, center);
+}
+
+.titulos-descuentos {
+  text-align: flex-start;
   padding-left: 10px;
   color: var(--color-texto-principal);
   font-family: var(--fuente-principal);
@@ -1281,6 +1309,7 @@ img {
   font-family: var(--fuente-principal);
   font-weight: 100;
   font-size: clamp(1rem, 5vw, 1.2rem);
+  text-transform: capitalize;
 }
 .calificacion-producto-categorias {
   color: var(--color-principal);
@@ -1318,10 +1347,10 @@ img {
     width: 100%;
     height: 40px;
     margin: 0;
-    background: none;
     justify-content: flex-start;
+    background: none;
     font-size: 1.3rem;
-  }
+  } //clase reutilizada, display flex ya esta declarado
 }
 .logo-redes,
 .img-logo {
@@ -1330,11 +1359,14 @@ img {
 .logo-redes {
   margin-bottom: 30px;
 }
+.logo-footer,
+.redes {
+  height: 80px;
+  @include flexbox(row, flex-start, center);
+}
 
 .logo-footer {
   width: 300px;
-  height: 80px;
-  @include flexbox(row, flex-start, center);
   margin-right: auto;
 }
 .img-logo {
@@ -1343,8 +1375,6 @@ img {
 }
 .redes {
   width: 100%;
-  height: 80px;
-  @include flexbox(row, flex-start, center);
   i {
     width: 32px;
     height: 32px;
@@ -1453,7 +1483,7 @@ img {
       flex-direction: row;
       .logo-footer {
         width: 250px;
-        margin-right: 70px;
+        margin-right: 20px;
       }
     }
     .newsletter {
@@ -1469,11 +1499,11 @@ img {
 }
 
 .bg-black-desplazable {
-  width: 0;
-  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
+  width: 0;
+  height: 100%;
   z-index: 9;
   background: rgba(0, 0, 0, 0.404);
   opacity: 0;
@@ -1492,17 +1522,16 @@ img {
 
   background: rgb(255, 255, 255);
   .btn-cerrar-desplazable {
-    width: 50px;
-    height: 50px;
-    background: white;
-    z-index: inherit;
-    border: 1px solid rgb(223, 223, 223);
     position: absolute;
     left: -20px;
     top: 10px;
-    border-radius: 50%;
-    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
     @include flexbox(row, center, center);
+    border: 1px solid rgb(223, 223, 223);
+    border-radius: 50%;
+    background: white;
+    font-size: 1.5rem;
     cursor: pointer;
   }
 }
@@ -1515,6 +1544,14 @@ img {
   display: none;
   opacity: 0;
   overflow: scroll; //AÑADIDO EN LOS HIJOS DEL DESPLAZABLE PARA NO AFECTAR EL BOTON CERRAR
+  .descripcion-item {
+    .color-item {
+      background: black;
+    }
+    .color-2 {
+      background: rgb(141, 0, 59);
+    }
+  }
 }
 
 .barra-superior,
@@ -1526,9 +1563,7 @@ img {
   position: relative;
   width: 100%;
   height: 60px;
-  @include flexbox(row, center, center);
   border-bottom: 1px solid rgb(228, 228, 228);
-
   .titulo-carrito,
   .titulo-favoritos {
     font-family: var(--fuente-principal);
@@ -1550,9 +1585,9 @@ img {
   .img-item {
     width: 50px;
     height: 50px;
-    background: #f5f5f5;
     border-radius: 50%;
     overflow: hidden;
+    background: #f5f5f5;
   }
   .descripcion-item {
     width: 55%;
@@ -1563,7 +1598,6 @@ img {
   }
   .nombre-producto-categorias {
     font-weight: bolder;
-    text-transform: capitalize;
   }
   .color-item,
   .tamaño-item {
@@ -1574,13 +1608,16 @@ img {
     border-radius: 50%;
   }
   .color-item {
+    background: rgb(255, 251, 0);
+  }
+  .color-2 {
     background: black;
   }
   .tamaño-item {
-    margin: 0 10px;
-    border-radius: 0;
     @include flexbox(row, center, center);
+    margin: 0 10px;
     padding: 0;
+    border-radius: 0;
     font-size: 0.85rem;
   }
   .editar-item {
@@ -1604,7 +1641,6 @@ img {
   .contador-numero {
     width: 33%;
     height: 100%;
-    background: rgb(223, 223, 223);
     @include flexbox(row, center, center);
     background: rgb(245, 245, 245);
   }
@@ -1612,9 +1648,9 @@ img {
     width: 100%;
     height: 20px;
     @include flexbox(row, center, center);
+    color: red;
     font-family: var(--fuente-principal);
     text-decoration: underline;
-    color: red;
     text-transform: capitalize;
     cursor: pointer;
   }
@@ -1622,6 +1658,14 @@ img {
   //seccion-terminar-compra
   .terminar-compra {
     width: 100%;
+    font-family: var(--fuente-principal);
+  }
+  .subtotal,
+  .subtotal-valor {
+    height: 100%;
+    @include flexbox(row, center, center);
+    font-size: 1.3rem;
+    font-weight: bolder;
   }
   .cuenta-final {
     width: 100%;
@@ -1630,29 +1674,19 @@ img {
     padding: 0 10px;
   }
   .subtotal {
-    @include flexbox(row, center, center);
-    height: 100%;
     width: 50%;
-    font-family: var(--fuente-principal);
     text-transform: capitalize;
-    font-size: 1.3rem;
-    font-weight: bolder;
   }
   .subtotal-valor {
-    @include flexbox(row, center, center);
-    height: 100%;
     width: 30%;
-    font-family: var(--fuente-principal);
-    font-size: 1.3rem;
-    font-weight: bolder;
     color: var(--color-principal);
     background: rgb(247, 247, 247);
   }
   .botones-compra {
-    padding: 0 10px;
-    margin: 10px 0;
     width: 100%;
     @include flexbox(column, center, center);
+    margin: 10px 0;
+    padding: 0 10px;
   }
 
   .btn-principal {
@@ -1678,10 +1712,10 @@ img {
   overflow: scroll; //AÑADIDO EN LOS HIJOS DEL DESPLAZABLE PARA NO AFECTAR EL BOTON CERRAR
   .btn-principal {
     width: 100%;
+    max-width: 350px;
     align-self: center;
     margin: 20px 0;
     font-size: 0.9rem;
-    max-width: 350px;
   }
 }
 .barra-superior {
@@ -1697,11 +1731,11 @@ img {
 }
 .contenido-login {
   width: 100%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   padding: 25px 10px;
   border-bottom: 1px solid rgb(221, 221, 221);
-  max-width: 400px;
   margin: 0 auto;
 }
 .label-login {
@@ -1715,13 +1749,12 @@ img {
 }
 .input {
   width: 100%;
+  max-width: 400px;
   height: 35px;
   @include flexbox(row, center, center);
   margin: 5px 0 15px;
-  max-width: 400px;
 }
 .icono-login {
-  display: block;
   width: 35px;
   height: 100%;
   @include flexbox(row, center, center);
@@ -1731,9 +1764,9 @@ img {
 .input-user {
   width: calc(100% - 35px);
   height: 35px;
+  padding: 0 10px;
   border: none;
   background: rgb(241, 241, 241);
-  padding: 0 10px;
   font-size: 1.1rem;
 }
 
@@ -1793,7 +1826,6 @@ img {
   font-family: var(--fuente-secundaria);
 }
 .icono-search {
-  display: block;
   width: 55px;
   height: 100%;
   @include flexbox(row, center, center);
@@ -1804,9 +1836,9 @@ img {
 .desplazable-fav {
   width: 0;
   height: 100%;
+  @include flexbox(column, flex-start, flex-start);
   padding: 0 20px;
   border-radius: 10px;
-  @include flexbox(column, flex-start, flex-start);
   opacity: 0;
   display: none;
   .btn-principal {
@@ -1817,6 +1849,13 @@ img {
     font-weight: bolder;
     margin-left: 30px;
   }
+  .color-item {
+    background: yellow;
+    margin-bottom: 15px;
+  }
+  .color-2 {
+    background: rgb(0, 0, 0);
+  }
 }
 .img-item {
   min-width: 50px;
@@ -1825,13 +1864,7 @@ img {
 .descripcion-item {
   width: 50%;
 }
-.color-item {
-  background: yellow;
-  margin-bottom: 15px;
-}
-.color-2 {
-  background: rgb(0, 0, 0);
-}
+
 .editar-item {
   width: 30%;
   height: 100%;
