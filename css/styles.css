@@ -1840,18 +1840,24 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: var(--color-texto-principal);
   font-family: var(--fuente-principal);
   font-weight: 100;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 5vw, 1.2rem);
 }
 
 .calificacion-producto-categorias {
-  color: #ff9c00;
+  color: var(--color-principal);
   font-size: 0.8rem;
+  text-transform: capitalize;
+}
+
+.nuevos {
+  color: #00e04b;
 }
 
 .precio-producto-categorias {
-  font-size: 1rem;
+  font-size: clamp(1rem, 5vw, 1.3rem);
 }
 
 @media (min-width: 850px) {
