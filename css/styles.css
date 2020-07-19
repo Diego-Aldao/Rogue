@@ -548,6 +548,10 @@ img {
 .menu-desplegable .contenido-principal-menu-desplegable .btn-principal {
   width: 80%;
   margin: 0 10vw;
+  border: 2px solid var(--color-principal);
+  background: none;
+  color: var(--color-principal);
+  font-weight: bolder;
 }
 
 .menu-desplegable .contenido-principal-menu-desplegable .contenido-fav {
@@ -1701,13 +1705,6 @@ img {
           align-items: center;
 }
 
-.texto-descuento .mini-texto {
-  padding: 0 0 5px 10px;
-  letter-spacing: 0px;
-  font-size: clamp(0.8rem, 3vw, 1.5rem);
-  text-transform: capitalize;
-}
-
 .texto-descuento .mini-texto,
 .titulos-descuentos {
   width: 100%;
@@ -1725,6 +1722,13 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.texto-descuento .mini-texto {
+  padding: 0 0 5px 10px;
+  letter-spacing: 0px;
+  font-size: clamp(0.8rem, 3vw, 1.5rem);
+  text-transform: capitalize;
 }
 
 .titulos-descuentos {
@@ -2233,6 +2237,7 @@ img {
   position: absolute;
   left: -20px;
   top: 10px;
+  z-index: 2;
   width: 50px;
   height: 50px;
   display: -webkit-box;
