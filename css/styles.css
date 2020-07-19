@@ -335,6 +335,9 @@ a {
 
 .dropdown-item:hover {
   background: var(--color-principal);
+}
+
+.dropdown-item:hover a {
   color: white;
 }
 
@@ -1973,11 +1976,30 @@ a {
   width: 35px;
   height: 35px;
   border-radius: 50%;
+  background: black;
+}
+
+.modal-producto .img-color:nth-child(3) {
+  background: gray;
 }
 
 .modal-producto .letra-tamaño {
   width: 30px;
   height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.9rem;
 }
 
 .modal-producto .compra,
@@ -2083,7 +2105,7 @@ a {
 
 .modal-producto .key,
 .modal-producto .value {
-  height: 25px;
+  min-height: 35px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2107,10 +2129,27 @@ a {
 
 .modal-producto .value {
   width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .modal-producto .value-disponibilidad {
   color: #00e400;
+}
+
+.modal-producto .redes-modal {
+  margin-right: 5px;
 }
 
 @media (min-width: 850px) {

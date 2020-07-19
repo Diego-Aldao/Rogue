@@ -226,7 +226,9 @@ a {
 }
 .dropdown-item:hover {
   background: var(--color-principal);
-  color: white;
+  a {
+    color: white;
+  }
 }
 .dropdown-nuevo {
   left: -20px;
@@ -1299,10 +1301,16 @@ a {
     width: 35px;
     height: 35px;
     border-radius: 50%;
+    background: black;
+  }
+  .img-color:nth-child(3) {
+    background: gray;
   }
   .letra-tamaño {
     width: 30px;
     height: 30px;
+    @include flexbox(row, center, center);
+    font-size: 0.9rem;
   }
   .compra,
   .contador,
@@ -1371,7 +1379,7 @@ a {
   }
   .key,
   .value {
-    height: 25px;
+    min-height: 35px;
     @include flexbox(row, flex-start, center);
     text-transform: capitalize;
     font-size: 0.9rem;
@@ -1381,9 +1389,13 @@ a {
   }
   .value {
     width: 60%;
+    @include flexbox(row, flex-start, center);
   }
   .value-disponibilidad {
     color: rgb(0, 228, 0);
+  }
+  .redes-modal {
+    margin-right: 5px;
   }
 }
 
