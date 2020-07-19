@@ -67,7 +67,8 @@
                   style="top: -80px;"
                 >
                   <!--LA SEGUNDA CLAZE PARA ANIMARLA CON GSAP SIN QUE INTERVENGA LA PRIMERA, Y EL ESTILO INLINE PARA QUE FUNCIONE LA ANIMACION GSAP-->
-                  <div class="ejemplo-item">
+                  <div class="ejemplo-item item-fav-menu-movil">
+                    <!--SEGUNDA CLASE PARA USARLA CON EL BOTON REMOVER CON JS-->
                     <div class="img-item">
                       <img
                         src="./images/ropa-hombre/hoodie01mini.webp"
@@ -79,7 +80,7 @@
                       <h2 class="nombre-producto-categorias">buzo tankedUp</h2>
                       <p class="precio-producto-categorias">$1200</p>
                     </div>
-                    <div class="editar-item item-fav-menu-movil"> <!--SEGUNDA CLASE PARA USARLA CON EL BOTON REMOVER CON JS-->
+                    <div class="editar-item">
                       <div class="contenedor-color-tamaño">
                         <span class="color-item"></span
                         ><span class="tamaño-item">S</span>
@@ -109,7 +110,9 @@
                       <span class="remover">remover</span>
                     </div>
                   </div>
-                  <button class="btn-principal">remover todo</button>
+                  <button class="btn-principal btn-remover">
+                    remover todo
+                  </button>
                 </div>
               </div>
             </div>
@@ -1223,7 +1226,12 @@
             </div>
             <div class="descripcion-item">
               <h2 class="nombre-producto-categorias">buzo attire</h2>
-              <p class="precio-producto-categorias">$1050</p>
+              <p
+                class="precio-producto-categorias precio-cart"
+                data-precio="1050"
+              >
+                $1050
+              </p>
               <span class="color-item"></span><span class="tamaño-item">M</span>
             </div>
             <div class="editar-item">
@@ -1232,7 +1240,7 @@
                 <span class="contador-numero">1</span>
                 <button class="btn-contador-suma">+</button>
               </div>
-              <span class="remover">remover</span>
+              <span class="remover remover-cart">remover</span>
             </div>
           </div>
           <div class="ejemplo-item">
@@ -1245,7 +1253,12 @@
             </div>
             <div class="descripcion-item">
               <h2 class="nombre-producto-categorias">zapatillas south city</h2>
-              <p class="precio-producto-categorias">$3999</p>
+              <p
+                class="precio-producto-categorias precio-cart"
+                data-precio="3999"
+              >
+                $3999
+              </p>
               <span class="color-item color-2"></span
               ><span class="tamaño-item">41</span>
             </div>
@@ -1255,13 +1268,13 @@
                 <span class="contador-numero">1</span>
                 <button class="btn-contador-suma">+</button>
               </div>
-              <span class="remover">remover</span>
+              <span class="remover remover-cart">remover</span>
             </div>
           </div>
           <div class="terminar-compra">
             <div class="cuenta-final">
               <span class="subtotal">subtotal:</span
-              ><span class="subtotal-valor">$5049</span>
+              ><span class="subtotal-valor"></span>
             </div>
             <div class="botones-compra">
               <button class="btn-principal">ver carrito</button>

@@ -372,4 +372,44 @@ window.onload = () => {
       CerrarDesplazable(contenedorDesplegable, contenedorFavoritos);
     });
   })();
+
+  //INICIO EVENT LISTENERS REMOVER ITEMS DE DESPLEGABLES
+  (function () {
+    const btnRemover = document.querySelectorAll(".remover");
+    const btnRemoverTodo = document.querySelector(".btn-remover");
+    const itemsFavoritos = document.querySelectorAll(".item-fav-menu-movil");
+
+    const eliminarElemento = (itemParaEliminar) => {
+      gsap.to(itemParaEliminar, {
+        duration: 0.3,
+        opacity: 0,
+        display: "none",
+      });
+    };
+
+    btnRemover.forEach((btn) => {
+      let itemPadre = btn.parentElement.parentElement;
+      btn.addEventListener("click", () => {
+        itemPadre.remove();
+      });
+    });
+    btnRemoverTodo.addEventListener("click", () => {
+      itemsFavoritos.forEach((item) => {
+        eliminarElemento(item);
+      });
+      eliminarElemento(btnRemoverTodo);
+    });
+
+    //SUMA DE PRECIOS DESPLEGABLE CART
+
+    const itemsCart = document.querySelectorAll(".precio-cart");
+    const subTotal = document.querySelector(".subtotal-valor");
+
+    let precioFinal = 0;
+    itemsCart.forEach((item) => {
+      precioFinal += parseInt(item.dataset.precio); //PASAR A VALOR NUMERICO EL STRING CON EL PRECIO DEL PRODUCTO
+    });
+
+    subTotal.innerHTML = `$${precioFinal}`;
+  })();
 };
