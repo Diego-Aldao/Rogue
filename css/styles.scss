@@ -423,17 +423,18 @@ a {
       center / cover no-repeat;
   }
   .categoria-menu-desplegable:nth-child(3) {
-    background: url("/images/imagenes-desplazable-categorias/black-framed-eyeglasses-on-white-jacket-and-blue-denim-934070.webp")
-      center / cover no-repeat;
-  }
-  .categoria-menu-desplegable:nth-child(4) {
-    background: url("/images/imagenes-desplazable-categorias/clothes-clothing-colors-shirts-581087.webp")
-      center / cover no-repeat;
-  }
-  .categoria-menu-desplegable:nth-child(5) {
     background: url("/images/imagenes-desplazable-categorias/photo-of-discount-sign-2529787.webp")
       center / cover no-repeat;
   }
+  .categoria-menu-desplegable:nth-child(4) {
+    background: url("/images/imagenes-desplazable-categorias/black-framed-eyeglasses-on-white-jacket-and-blue-denim-934070.webp")
+      center / cover no-repeat;
+  }
+  .categoria-menu-desplegable:nth-child(5) {
+    background: url("/images/imagenes-desplazable-categorias/clothes-clothing-colors-shirts-581087.webp")
+      center / cover no-repeat;
+  }
+
   .categoria-menu-desplegable:after {
     content: "";
     width: 100%;
@@ -443,7 +444,8 @@ a {
     top: 0;
     background: rgba(0, 0, 0, 0.473);
   }
-  .nombre-categoria {
+  .nombre-categoria,
+  .nombre-categoria a {
     color: white;
     font-size: 1.1rem;
     font-family: var(--fuente-principal);

@@ -73,6 +73,9 @@ window.onload = () => {
     const menuHamburguesa = document.querySelector(".menu-hamburguesa");
     const botonCerrar = document.querySelector(".btn-cerrar");
     const bgOscuro = document.querySelector(".bg-black-desplazable");
+    const categoriasDesplegable = document.querySelectorAll(
+      ".categoria-menu-desplegable"
+    );
 
     menuHamburguesa.addEventListener("click", () => {
       gsap.to(menuDesplegable, {
@@ -102,7 +105,7 @@ window.onload = () => {
       });
     });
 
-    //INICIO SECCION BOTONES
+    //EVENT LISTENERS BOTONES BARRA SUPERIOR
     const btnMenu = document.querySelector(".menu-global");
     const btnCategorias = document.querySelector(".menu-categorias");
     const contenidoGlobal = document.querySelector(
@@ -135,6 +138,23 @@ window.onload = () => {
         duration: 0.3,
         right: 0,
         width: "100%",
+      });
+    });
+
+    //EVENT LISTENERS CATEGORIAS
+    categoriasDesplegable.forEach((categoria) => {
+      categoria.addEventListener("click", () => {
+        gsap.to(menuDesplegable, {
+          duration: 0.5,
+          left: "-100vw",
+        });
+        gsap.to(bgOscuro, {
+          opacity: 0,
+        });
+        gsap.to(bgOscuro, {
+          delay: 0.5,
+          width: 0,
+        });
       });
     });
 
