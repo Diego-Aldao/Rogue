@@ -67,7 +67,7 @@
                   style="top: -80px;"
                 >
                   <!--LA SEGUNDA CLAZE PARA ANIMARLA CON GSAP SIN QUE INTERVENGA LA PRIMERA, Y EL ESTILO INLINE PARA QUE FUNCIONE LA ANIMACION GSAP-->
-                  <div class="ejemplo-item item-fav-menu-movil">
+                  <div class="ejemplo-item item-fav">
                     <!--SEGUNDA CLASE PARA USARLA CON EL BOTON REMOVER CON JS-->
                     <div class="img-item">
                       <img
@@ -88,7 +88,7 @@
                       <span class="remover">remover</span>
                     </div>
                   </div>
-                  <div class="ejemplo-item item-fav-menu-movil">
+                  <div class="ejemplo-item item-fav">
                     <div class="img-item">
                       <img
                         src="./images/ropa-hombre/sneaker02mini.webp"
@@ -156,59 +156,92 @@
         <div class="menu-oculto">
           <ul class="contenedor-link">
             <li class="links nav-mujer">
-              <a href="#">mujeres</a>
+              <a class="links-a" href="#compras-mujer">mujeres</a>
               <div class="dropdown dropdown-mujer">
                 <ul>
-                  <li class="dropdown-item item-mujer">zapatos</li>
-                  <li class="dropdown-item item-mujer">vestidos</li>
-                  <li class="dropdown-item item-mujer">camperas</li>
-                  <li class="dropdown-item item-mujer">ver todo...</li>
+                  <li class="dropdown-item item-mujer">
+                    <a href="#compras-mujer">zapatos</a>
+                  </li>
+                  <li class="dropdown-item item-mujer">
+                    <a href="#compras-mujer">vestidos</a>
+                  </li>
+                  <li class="dropdown-item item-mujer">
+                    <a href="#compras-mujer">camperas</a>
+                  </li>
+                  <li class="dropdown-item item-mujer">
+                    <a href="#compras-mujer">ver todo...</a>
+                  </li>
                 </ul>
               </div>
             </li>
             <li class="links nav-hombre">
-              <a href="#">hombres</a>
+              <a class="links-a" href="#compras-hombre">hombres</a>
               <div class="dropdown dropdown-hombre">
                 <ul class="ul-hombre">
-                  <li class="dropdown-item item-hombre">buzos</li>
-                  <li class="dropdown-item item-hombre">jeans</li>
-                  <li class="dropdown-item item-hombre">zapatillas</li>
-                  <li class="dropdown-item item-hombre">ver todo...</li>
+                  <li class="dropdown-item item-hombre">
+                    <a href="#compras-hombre">buzos</a>
+                  </li>
+                  <li class="dropdown-item item-hombre">
+                    <a href="#compras-hombre">jeans</a>
+                  </li>
+                  <li class="dropdown-item item-hombre">
+                    <a href="#compras-hombre">zapatillas</a>
+                  </li>
+                  <li class="dropdown-item item-hombre">
+                    <a href="#compras-hombre">ver todo...</a>
+                  </li>
                 </ul>
               </div>
             </li>
             <li class="links nav-nuevo">
-              <a href="#">Nuevo</a>
+              <a class="links-a" href="#nuevos-productos">Nuevo</a>
               <div class="dropdown dropdown-nuevo">
                 <ul class="ul-nuevos">
-                  <li class="dropdown-item item-nuevo">mujer</li>
-                  <li class="dropdown-item item-nuevo">hombre</li>
-                  <li class="dropdown-item item-nuevo">accesorios</li>
-                  <li class="dropdown-item item-nuevo">ver todo...</li>
+                  <li class="dropdown-item item-nuevo">
+                    <a href="#nuevos-productos">mujer</a>
+                  </li>
+                  <li class="dropdown-item item-nuevo">
+                    <a href="#nuevos-productos">hombre</a>
+                  </li>
+                  <li class="dropdown-item item-nuevo">
+                    <a href="#nuevos-productos">accesorios</a>
+                  </li>
+                  <li class="dropdown-item item-nuevo">
+                    <a href="#nuevos-productos">ver todo...</a>
+                  </li>
                 </ul>
               </div>
             </li>
-            <li class="links nav-descuento">
-              <a href="#">descuentos</a>
-              <div class="dropdown dropdown-descuento">
-                <ul class="ul-descuentos">
-                  <li class="dropdown-item item-descuento">10% OFF</li>
-                  <li class="dropdown-item item-descuento">25% OFF</li>
-                  <li class="dropdown-item item-descuento">40% OFF</li>
+            <li class="links nav-mas-vendidos">
+              <a class="links-a" href="#mas-vendidos">mas vendidos</a>
+              <div class="dropdown dropdown-mas-vendidos">
+                <ul class="ul-mas-vendidos">
+                  <li class="dropdown-item item-mas-vendidos">
+                    <a href="#mas-vendidos">hombre</a>
+                  </li>
+                  <li class="dropdown-item item-mas-vendidos">
+                    <a href="#mas-vendidos">mujer</a>
+                  </li>
+                  <li class="dropdown-item item-mas-vendidos">
+                    <a href="#mas-vendidos">nuevo</a>
+                  </li>
+                  <li class="dropdown-item item-mas-vendidos">
+                    <a href="#mas-vendidos">ver todo...</a>
+                  </li>
                 </ul>
               </div>
             </li>
           </ul>
         </div>
         <div class="cart">
-          <span class="cantidad-cart-fav">2</span>
+          <span class="cantidad-cart-fav cant-cart">2</span>
           <i class="fas fa-shopping-cart"></i>
         </div>
         <div class="buscar oculto">
           <i class="fas fa-search"></i>
         </div>
         <div class="favorito oculto">
-          <span class="cantidad-cart-fav">2</span>
+          <span class="cantidad-cart-fav cant-fav">2</span>
           <i class="far fa-heart"></i>
         </div>
       </div>
@@ -265,7 +298,7 @@
       <div class="swiper-button-prev swiper-button-white btn-header-prev"></div>
     </header>
     <!--INICIO SECCION COMPRAS MUJER-->
-    <section class="compras">
+    <section class="compras" id="compras-mujer">
       <h2 class="titulos-secundarios">mujer</h2>
       <span class="linea-separadora"></span>
       <div class="contenido-mujer-hombre">
@@ -521,7 +554,7 @@
       </div>
     </section>
     <!--INICIO SECCION COMPRAS HOMBRE-->
-    <section class="compras">
+    <section class="compras" id="compras-hombre">
       <h2 class="titulos-secundarios titulo-hombre">hombre</h2>
       <span class="linea-separadora"></span>
       <div class="contenido-mujer-hombre contenido-hombre">
@@ -900,7 +933,7 @@
           <div class="swiper-button-prev swiper-button-white"></div>
         </div>
       </div>
-      <div class="mas-vendidos">
+      <div class="mas-vendidos" id="mas-vendidos">
         <h2 class="titulos-secundarios titulos-mas-visitados">mas vendidos</h2>
         <span class="linea-separadora"></span>
         <div class="contenedor-slider-productos-categorias">
@@ -1023,7 +1056,7 @@
           <div class="swiper-button-prev swiper-button-white"></div>
         </div>
       </div>
-      <div class="nuevos-productos">
+      <div class="nuevos-productos" id="nuevos-productos">
         <h2 class="titulos-secundarios titulos-mas-visitados">nuevos</h2>
         <span class="linea-separadora"></span>
         <div class="contenedor-slider-productos-categorias">
@@ -1219,33 +1252,6 @@
           <div class="ejemplo-item">
             <div class="img-item">
               <img
-                src="./images/ropa-hombre/hoodie-mini.webp"
-                alt=""
-                loading="lazy"
-              />
-            </div>
-            <div class="descripcion-item">
-              <h2 class="nombre-producto-categorias">buzo attire</h2>
-              <p
-                class="precio-producto-categorias precio-cart"
-                data-precio="1050"
-              >
-                $1050
-              </p>
-              <span class="color-item"></span><span class="tamaño-item">M</span>
-            </div>
-            <div class="editar-item">
-              <div class="contador">
-                <button class="btn-contador-resta">-</button>
-                <span class="contador-numero">1</span>
-                <button class="btn-contador-suma">+</button>
-              </div>
-              <span class="remover remover-cart">remover</span>
-            </div>
-          </div>
-          <div class="ejemplo-item">
-            <div class="img-item">
-              <img
                 src="/images/ropa-hombre/sneaker01-mini.webp"
                 alt=""
                 loading="lazy"
@@ -1264,17 +1270,17 @@
             </div>
             <div class="editar-item">
               <div class="contador">
-                <button class="btn-contador-resta">-</button>
-                <span class="contador-numero">1</span>
-                <button class="btn-contador-suma">+</button>
+                <button class="btn-contador-resta resta-cart">-</button>
+                <span class="contador-numero contador-cart">1</span>
+                <button class="btn-contador-suma suma-cart">+</button>
               </div>
               <span class="remover remover-cart">remover</span>
             </div>
           </div>
           <div class="terminar-compra">
             <div class="cuenta-final">
-              <span class="subtotal">subtotal:</span
-              ><span class="subtotal-valor"></span>
+              <span class="subtotal">subtotal: </span
+              ><span class="subtotal-valor">$3999</span>
             </div>
             <div class="botones-compra">
               <button class="btn-principal">ver carrito</button>
@@ -1335,7 +1341,7 @@
           <h3 class="titulo-favoritos">tus favoritos</h3>
         </div>
         <div class="contenido-fav">
-          <div class="ejemplo-item">
+          <div class="ejemplo-item item-fav">
             <div class="img-item">
               <img
                 src="./images/ropa-hombre/hoodie01mini.webp"
@@ -1355,7 +1361,7 @@
               <span class="remover">remover</span>
             </div>
           </div>
-          <div class="ejemplo-item">
+          <div class="ejemplo-item item-fav">
             <div class="img-item">
               <img
                 src="./images/ropa-hombre/sneaker02mini.webp"
@@ -1375,7 +1381,7 @@
               <span class="remover">remover</span>
             </div>
           </div>
-          <button class="btn-principal">remover todo</button>
+          <button class="btn-principal btn-remover">remover todo</button>
         </div>
       </div>
     </div>

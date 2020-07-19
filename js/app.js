@@ -143,6 +143,7 @@ window.onload = () => {
     const contenedorFavoritos = document.querySelector(
       ".favoritos-menu-desplazable"
     );
+
     const flecha = document.querySelector(".flechita-favoritos");
     titulo.addEventListener("click", () => {
       if (contenedorFavoritos.style.top == "-80px") {
@@ -222,15 +223,17 @@ window.onload = () => {
       cerrarDropdown(dropDownHombre, ".item-hombre");
     });
 
-    //INICIO DROPDOWN DESCUENTO
-    const navDescuento = document.querySelector(".nav-descuento");
-    const dropDownDescuento = document.querySelector(".dropdown-descuento");
+    //INICIO DROPDOWN MasVendidos
+    const navMasVendidos = document.querySelector(".nav-mas-vendidos");
+    const dropDownMasVendidos = document.querySelector(
+      ".dropdown-mas-vendidos"
+    );
 
-    navDescuento.addEventListener("mouseover", () => {
-      abrirDropdown(dropDownDescuento, ".item-descuento");
+    navMasVendidos.addEventListener("mouseover", () => {
+      abrirDropdown(dropDownMasVendidos, ".item-mas-vendidos");
     });
-    navDescuento.addEventListener("mouseleave", () => {
-      cerrarDropdown(dropDownDescuento, ".item-descuento");
+    navMasVendidos.addEventListener("mouseleave", () => {
+      cerrarDropdown(dropDownMasVendidos, ".item-mas-vendidos");
     });
 
     //INICIO DROPDOWN NUEVO
@@ -373,11 +376,14 @@ window.onload = () => {
     });
   })();
 
-  //INICIO EVENT LISTENERS REMOVER ITEMS DE DESPLEGABLES
+  //INICIO EVENT LISTENERS ITEMS DE DESPLEGABLES
   (function () {
+    //REMOVER ITEMS
+
+    //FAVORITOS
     const btnRemover = document.querySelectorAll(".remover");
-    const btnRemoverTodo = document.querySelector(".btn-remover");
-    const itemsFavoritos = document.querySelectorAll(".item-fav-menu-movil");
+    const btnsRemoverTodo = document.querySelectorAll(".btn-remover");
+    const itemsFavoritos = document.querySelectorAll(".item-fav");
 
     const eliminarElemento = (itemParaEliminar) => {
       gsap.to(itemParaEliminar, {
@@ -390,26 +396,46 @@ window.onload = () => {
     btnRemover.forEach((btn) => {
       let itemPadre = btn.parentElement.parentElement;
       btn.addEventListener("click", () => {
-        itemPadre.remove();
+        eliminarElemento(itemPadre);
+        btnsRemoverTodo.forEach((btn) => {
+          eliminarElemento(btnsRemoverTodo);
+        });
       });
     });
-    btnRemoverTodo.addEventListener("click", () => {
-      itemsFavoritos.forEach((item) => {
-        eliminarElemento(item);
+    btnsRemoverTodo.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        itemsFavoritos.forEach((item) => {
+          eliminarElemento(item);
+        });
+        eliminarElemento(btnsRemoverTodo);
       });
-      eliminarElemento(btnRemoverTodo);
     });
 
-    //SUMA DE PRECIOS DESPLEGABLE CART
+    //CART
+    const btnRemoverCart = document.querySelector(".remover-cart");
+    const contenidoCart = document.querySelector(".terminar-compra");
 
-    const itemsCart = document.querySelectorAll(".precio-cart");
-    const subTotal = document.querySelector(".subtotal-valor");
-
-    let precioFinal = 0;
-    itemsCart.forEach((item) => {
-      precioFinal += parseInt(item.dataset.precio); //PASAR A VALOR NUMERICO EL STRING CON EL PRECIO DEL PRODUCTO
+    btnRemoverCart.addEventListener("click", () => {
+      eliminarElemento(contenidoCart);
     });
 
-    subTotal.innerHTML = `$${precioFinal}`;
+    //CONTADOR CART
+    const btnResta = document.querySelector(".resta-cart");
+    const btnSuma = document.querySelector(".suma-cart");
+    const contenedorContador = document.querySelector(".contador-cart");
+
+    let contador = 1;
+    btnResta.addEventListener("click", () => {
+      contador--;
+      contenedorContador.textContent = contador;
+      if (contador == 0) {
+        eliminarElemento(btnResta.parentElement.parentElement.parentElement);
+        eliminarElemento(contenidoCart);
+      }
+    });
+    btnSuma.addEventListener("click", () => {
+      contador++;
+      contenedorContador.textContent = contador;
+    });
   })();
 };

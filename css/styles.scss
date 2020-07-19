@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 //ORDEN DE LAS PROPIEDADES
@@ -34,7 +35,12 @@ body {
 img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; //PARA QUE NO SE ESTIRE
+}
+
+a {
+  color: var(--color-texto-principal);
+  text-decoration: none;
 }
 
 .contenedor {
@@ -144,7 +150,7 @@ img {
     padding-top: 20px;
   }
 
-  .links a {
+  .links-a {
     position: relative;
     color: var(--color-texto-principal);
     text-decoration: none;
@@ -153,7 +159,7 @@ img {
     font-weight: bold;
     letter-spacing: 2px;
   }
-  .links a:hover {
+  .links-a:hover {
     color: var(--color-principal);
   }
 
@@ -266,8 +272,8 @@ img {
   left: -20px;
 }
 
-.dropdown-descuento {
-  left: 10px;
+.dropdown-mas-vendidos {
+  left: 15px;
 }
 
 //INICIO MENU DESPLEGABLE

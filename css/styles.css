@@ -6,6 +6,7 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 /*
@@ -40,6 +41,11 @@ img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+a {
+  color: var(--color-texto-principal);
+  text-decoration: none;
 }
 
 .contenedor {
@@ -178,7 +184,7 @@ img {
   padding-top: 20px;
 }
 
-.nav-principal .links a {
+.nav-principal .links-a {
   position: relative;
   color: var(--color-texto-principal);
   text-decoration: none;
@@ -188,7 +194,7 @@ img {
   letter-spacing: 2px;
 }
 
-.nav-principal .links a:hover {
+.nav-principal .links-a:hover {
   color: var(--color-principal);
 }
 
@@ -368,8 +374,8 @@ img {
   left: -20px;
 }
 
-.dropdown-descuento {
-  left: 10px;
+.dropdown-mas-vendidos {
+  left: 15px;
 }
 
 .menu-desplegable {
