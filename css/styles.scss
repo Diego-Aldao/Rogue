@@ -31,25 +31,22 @@ body {
 .oculto {
   display: none;
 }
-
 img {
   width: 100%;
   height: 100%;
   object-fit: cover; //PARA QUE NO SE ESTIRE
 }
-
 a {
   color: var(--color-texto-principal);
   text-decoration: none;
 }
-
 .contenedor {
   width: 95%;
   max-width: 1800px;
   margin: 0 auto;
 }
 
-//fuentes y colores
+//FUENTES Y COLORES
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap");
 :root {
@@ -60,7 +57,7 @@ a {
   --color-texto-secundario: #666666;
 }
 
-//botones
+//BOTONES
 .btn-principal {
   padding: 12px 17px;
   border: none;
@@ -73,8 +70,7 @@ a {
   cursor: pointer;
 }
 
-//mixins
-
+//NIXINS
 @mixin flexbox($row, $justify, $align) {
   display: flex;
   flex-direction: $row;
@@ -82,18 +78,16 @@ a {
   align-items: $align;
 }
 
-//navegacion-principal
+//INICIO NAVEGACION PRINCIPAL
 .nav-principal {
   width: 100%;
   height: 100px;
   font-family: var(--fuente-principal);
   text-transform: capitalize;
-
   .superior {
     height: 40px;
     @include flexbox(row, flex-end, center);
   }
-
   .idioma,
   .login,
   .logo,
@@ -104,12 +98,10 @@ a {
     height: 100%;
     @include flexbox(row, center, center);
   }
-
   .idioma {
     width: 80px;
     margin: 0 15px;
   }
-
   .login {
     width: 200px;
     font-family: var(--fuente-principal);
@@ -120,16 +112,13 @@ a {
   .login:hover {
     color: var(--color-principal);
   }
-
   .nav-inferior {
     height: 60px;
     @include flexbox(row, space-between, center);
   }
-
   .logo {
     width: 160px;
   }
-
   .menu-oculto {
     position: relative;
     width: calc(100% - 245px);
@@ -138,18 +127,15 @@ a {
     margin: auto;
     background: white;
   }
-
   .contenedor-link {
     width: 100%;
     justify-content: space-evenly;
     list-style-type: none;
   }
-
   .links {
     position: relative;
     padding-top: 20px;
   }
-
   .links-a {
     position: relative;
     color: var(--color-texto-principal);
@@ -162,13 +148,11 @@ a {
   .links-a:hover {
     color: var(--color-principal);
   }
-
   .menu-hamburguesa {
     width: 50px;
     flex-wrap: wrap;
     padding: 15px 10px;
   }
-
   .punto-menu {
     display: block;
     height: 6px;
@@ -187,7 +171,6 @@ a {
     transition: all 0.3s ease-in-out;
     cursor: pointer;
   }
-
   .favorito,
   .buscar {
     display: none;
@@ -197,7 +180,6 @@ a {
   .favorito:hover {
     color: var(--color-principal);
   }
-
   .cantidad-cart-fav {
     width: 15px;
     height: 15px;
@@ -210,27 +192,6 @@ a {
     font-size: 0.6rem;
     color: white;
     font-weight: bold;
-  }
-}
-
-@media (min-width: 768px) {
-  .nav-principal {
-    .buscar,
-    .favorito,
-    .cart {
-      @include flexbox(row, center, center);
-    }
-
-    .logo {
-      margin: 0;
-    }
-    .menu-hamburguesa {
-      display: none;
-    }
-    .menu-oculto {
-      z-index: 2;
-      display: flex;
-    }
   }
 }
 
@@ -267,17 +228,14 @@ a {
   background: var(--color-principal);
   color: white;
 }
-
 .dropdown-nuevo {
   left: -20px;
 }
-
 .dropdown-mas-vendidos {
   left: 15px;
 }
 
-//INICIO MENU DESPLEGABLE
-
+//MENU DESPLEGABLE
 .menu-desplegable {
   position: fixed;
   left: -100%;
@@ -288,7 +246,6 @@ a {
   height: 100vh;
   margin: 0;
   background: white;
-
   .barra-superior,
   .btn-cerrar,
   .menu-global,
@@ -297,7 +254,6 @@ a {
   .categoria-menu-desplegable {
     @include flexbox(row, center, center);
   }
-
   .barra-superior {
     width: 100%;
     height: 120px;
@@ -325,7 +281,6 @@ a {
   .linea-cerrar:nth-child(2) {
     transform: rotate(-45deg);
   }
-
   .menu-global,
   .menu-categorias {
     width: 45%;
@@ -350,7 +305,6 @@ a {
     @include flexbox(row, center, flex-start);
     overflow: hidden;
   }
-
   .contenido-principal-menu-desplegable {
     width: 100%;
     height: calc(100% - 120px);
@@ -399,7 +353,6 @@ a {
       margin-top: 0;
     }
   }
-
   .contenido-categorias-menu-desplegable {
     width: 0;
     height: calc(100% - 120px);
@@ -409,7 +362,6 @@ a {
     position: relative;
     right: -100%;
   }
-
   .categoria-menu-desplegable {
     position: relative;
     width: 65%;
@@ -434,7 +386,6 @@ a {
     background: url("/images/imagenes-desplazable-categorias/clothes-clothing-colors-shirts-581087.webp")
       center / cover no-repeat;
   }
-
   .categoria-menu-desplegable:after {
     content: "";
     width: 100%;
@@ -456,8 +407,26 @@ a {
   }
 }
 
-//MEDIA QUERYS MENU DESPLEGABLE
+//MEDIA QUERYS NAVEGACION PRINCIPAL
 @media (min-width: 768px) {
+  .nav-principal {
+    .buscar,
+    .favorito,
+    .cart {
+      @include flexbox(row, center, center);
+    }
+
+    .logo {
+      margin: 0;
+    }
+    .menu-hamburguesa {
+      display: none;
+    }
+    .menu-oculto {
+      z-index: 2;
+      display: flex;
+    }
+  }
   .menu-desplegable {
     display: none;
   }
@@ -469,7 +438,6 @@ a {
   height: 100%;
   @include flexbox(row, flex-start, center);
 }
-
 .contenedor-texto {
   width: 80%;
   max-width: 450px;
@@ -489,14 +457,14 @@ a {
   opacity: 0;
 }
 .titulos-principales {
+  position: relative;
+  left: -150px;
   margin-bottom: 15px;
   color: var(--color-texto-principal);
   font-family: var(--fuente-principal);
   font-weight: 900;
   text-transform: capitalize;
   font-size: clamp(2.6rem, 5vw, 6rem);
-  position: relative;
-  left: -150px;
   opacity: 0;
 }
 .btn-header {
@@ -523,7 +491,6 @@ a {
   background: url("../images/images-slider/slider03-movil.webp") center / cover
     no-repeat;
 }
-
 .btn-header-next,
 .btn-header-next:after,
 .btn-header-prev:after,
@@ -533,7 +500,6 @@ a {
   color: black;
   font-size: 1.5rem;
 }
-
 .swiper-pagination-bullet {
   background: black;
 }
@@ -570,7 +536,7 @@ a {
   }
 }
 
-//SECCION COMPRAS MUJERES-HOMBRES
+//INICIO SECCION COMPRAS MUJERES-HOMBRES
 .compras {
   position: relative;
   width: 100%;
@@ -858,12 +824,6 @@ a {
 }
 
 //MEDIA QUERYS SWIPER COMPRAS MUJERES-HOMBRES
-@media (min-width: 500px) {
-  .comprar {
-    margin: 0;
-  }
-}
-
 @media (min-width: 850px) {
   .contenedor-slider {
     width: 59%;
@@ -884,6 +844,365 @@ a {
     right: 0;
     left: 65px;
   }
+}
+
+//INICIO SECCION BREAK
+.break {
+  width: 100%;
+  max-width: 1700px;
+  @include flexbox(row, center, center);
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+.descuentos {
+  position: relative;
+  height: 30vw; //para que crezca siempre a un tamaño proporcional al ancho de la pantalla
+  max-height: 220px;
+  min-height: 100px;
+  @include flexbox(row, center, center);
+  flex-basis: 100%;
+  margin: 15px;
+  background: rgb(255, 219, 219);
+}
+.texto-descuento {
+  width: 60%;
+  height: 70%;
+  @include flexbox(column, center, center);
+}
+.texto-descuento .mini-texto,
+.titulos-descuentos {
+  width: 100%;
+  height: 50%;
+  @include flexbox(row, flex-start, center);
+}
+.texto-descuento .mini-texto {
+  padding: 0 0 5px 10px;
+  letter-spacing: 0px;
+  font-size: clamp(0.8rem, 3vw, 1.5rem);
+  text-transform: capitalize;
+} //heredar las propiedades del mini texto del header y cambiarle las necesarias para adaptarla al texto descuento
+.titulos-descuentos {
+  text-align: flex-start;
+  padding-left: 10px;
+  color: var(--color-texto-principal);
+  font-family: var(--fuente-principal);
+  font-size: clamp(1.3rem, 6.2vw, 3rem);
+}
+.imagen-descuento {
+  z-index: 1; //PARA SUPERPONER LA IMG AL BORDE BLANCO DEL DESCUENTO NRO 2
+  width: 25%;
+  height: 90%;
+}
+.descuentos:nth-child(1) {
+  background: rgb(245, 245, 245);
+  .mini-texto {
+    padding: 0 0 0 12px;
+    align-items: flex-start;
+    letter-spacing: 0px;
+    font-size: clamp(0.8rem, 2.3vw, 1.5rem);
+    //para que la tipografia tambien crezca siempre a un tamaño proporcional al ancho de la pantalla
+  }
+  .titulos-descuentos {
+    padding-left: 10px;
+    align-items: flex-end;
+  }
+  //para reemplazar las propiedades de mini texto y titulos descuentos que ya aplicaban para los dos div descuentos
+}
+.descuentos:nth-child(2):after {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 70%;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+//INICIO MEDIA QUERYS SECCION BREAK
+@media (min-width: 950px) {
+  .descuentos {
+    flex-basis: 45%;
+    height: 18vw;
+  }
+  .titulos-descuentos {
+    font-size: clamp(1.3rem, 4vw, 3rem);
+  }
+  .texto-descuento .mini-texto {
+    font-size: clamp(0.8rem, 2vw, 1.5rem);
+    height: 40%;
+  }
+  .descuentos:nth-child(1) {
+    .mini-texto,
+    .titulos-descuentos {
+      padding-left: 0;
+    }
+    .mini-texto {
+      font-size: clamp(0.8rem, 1.7vw, 1.5rem);
+    }
+  }
+}
+
+//INICIO SECCION CATEGORIAS
+.contenedor-categorias {
+  max-width: 1800px;
+  margin: 0 auto 50px;
+  .titulos-secundarios {
+    width: 180px;
+    justify-content: flex-start;
+    margin-left: 10px;
+    font-size: 1.1rem;
+    letter-spacing: 0;
+  }
+
+  //REEMPLAZANDO ALGUNAS PROPIEDADES DEL SWIPER ANTERIOR Y ADAPTARLO AL NUEVO
+  .columna-slider {
+    width: 100%;
+  }
+  .item-slider {
+    width: 95%;
+    max-width: 500px;
+    height: 40vw;
+    max-height: 200px;
+    @include flexbox(row, center, center);
+    margin: 15px auto 0 10px;
+    padding: 0;
+    box-shadow: none;
+  }
+  .swiper-button-next,
+  .swiper-button-next:after,
+  .swiper-button-prev:after,
+  .swiper-button-prev {
+    top: 35px;
+    right: 35px;
+    margin-top: 0;
+    margin-left: auto;
+    color: black;
+    font-size: 1.1rem;
+  }
+  .swiper-button-prev {
+    right: 70px;
+  }
+}
+.mas-vendidos,
+.mejores-reseñas,
+.nuevos-productos {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.img-productos-categorias {
+  width: 30%;
+  height: 100%;
+  background: #f5f5f5;
+}
+.descripcion-productos-categorias {
+  width: 66%;
+  height: 100%;
+  margin-left: auto;
+  padding-top: 0px;
+}
+.nombre-producto-categorias,
+.calificacion-producto-categorias,
+.precio-producto-categorias {
+  width: 100%;
+  height: 28%;
+  @include flexbox(row, flex-start, center);
+  color: var(--color-texto-principal);
+  font-family: var(--fuente-principal);
+  font-weight: 100;
+  font-size: clamp(1rem, 5vw, 1.2rem);
+  text-transform: capitalize;
+}
+.calificacion-producto-categorias {
+  color: var(--color-principal);
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+.nuevos {
+  color: rgb(0, 224, 75);
+}
+.precio-producto-categorias {
+  font-size: clamp(1rem, 5vw, 1.3rem);
+}
+
+//INICIO MEDIA QUERYS SECCION CATEGORIAS
+@media (min-width: 850px) {
+  .contenedor-categorias {
+    display: flex;
+    .item-slider {
+      height: 12vw;
+      margin-bottom: 30px;
+    }
+  }
+  .nuevos-productos,
+  .mejores-reseñas,
+  .mas-vendidos {
+    width: 33.33333333%;
+  }
+}
+
+//INICIO SECCION FOOTER
+.footer-principal {
+  padding-top: 30px;
+  background: rgb(241, 241, 241);
+  .titulos-secundarios {
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    justify-content: flex-start; //clase reutilizada, display flex ya esta declarado
+    background: none;
+    font-size: 1.3rem;
+  }
+}
+.logo-redes,
+.img-logo {
+  @include flexbox(column, center, center);
+}
+.logo-redes {
+  margin-bottom: 30px;
+}
+.logo-footer,
+.redes {
+  height: 80px;
+  @include flexbox(row, flex-start, center);
+}
+.logo-footer {
+  width: 300px;
+  margin-right: auto;
+}
+.img-logo {
+  width: 180px;
+  height: 60px;
+}
+.redes {
+  width: 100%;
+  i {
+    width: 32px;
+    height: 32px;
+    @include flexbox(row, center, center);
+    margin: 10px;
+    border: 1px solid rgb(196, 196, 196);
+    border-radius: 50%;
+    color: var(--color-texto-secundario);
+  }
+  i:nth-child(1) {
+    margin-left: 0;
+  }
+}
+.newsletter {
+  width: 100%;
+  max-width: 500px;
+  height: 100px;
+  @include flexbox(row, flex-start, flex-start);
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  .titulos-secundarios {
+    margin-bottom: -20px;
+  } //para acercar mas el titulo a la seccion correspondiente
+  .correo-newsletter {
+    width: 58%;
+    height: 35px;
+    margin-right: 5px;
+    border: 1px solid rgb(209, 209, 209);
+  }
+  .btn-principal {
+    width: 40%;
+    height: 35px;
+    padding: 4px 8px;
+    font-size: 0.7rem;
+    font-weight: bolder;
+  }
+}
+.contacto {
+  margin-bottom: 30px;
+  .titulos-secundarios {
+    margin-bottom: -20px;
+  }
+  ul {
+    width: 100%;
+    height: 200px;
+    @include flexbox(column, space-evenly, left);
+    list-style: none;
+  }
+  li {
+    width: 100%;
+    font-family: var(--fuente-principal);
+    font-size: 0.9rem;
+  }
+}
+.horarios {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 90px;
+  ul {
+    width: 100%;
+    height: 100px;
+    list-style: none;
+  }
+  li {
+    width: 100%;
+    height: 40px;
+    @include flexbox(row, space-between, left);
+  }
+  li:nth-child(2) {
+    border-bottom: 1px solid rgb(226, 226, 226);
+    border-top: 1px solid rgb(226, 226, 226);
+  }
+  span {
+    @include flexbox(row, center, center);
+    text-transform: capitalize;
+    font-family: var(--fuente-principal);
+  }
+}
+.copy {
+  width: 100%;
+  color: white;
+  background: rgb(0, 0, 0);
+  font-family: var(--fuente-principal);
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  .contenedor {
+    height: 50px;
+    @include flexbox(row, center, center);
+  }
+}
+
+//MEDIA QUERYS FOOTER
+@media (min-width: 850px) {
+  .footer-principal {
+    .contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 auto;
+    }
+    .logo-redes {
+      width: 50%;
+      flex-direction: row;
+      .logo-footer {
+        width: 250px;
+        margin-right: 20px;
+      }
+    }
+    .newsletter {
+      width: 50%;
+    }
+    .contacto {
+      width: 50%;
+    }
+    .horarios {
+      width: 50%;
+    }
+  }
+}
+
+//BODY OSCURO AL ABRIR ALGUN DESPLAZABLE
+.bg-black-desplazable {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  z-index: 9;
+  background: rgba(0, 0, 0, 0.404);
+  opacity: 0;
 }
 
 //MODAL PRODUCTO
@@ -1068,6 +1387,7 @@ a {
   }
 }
 
+//INICIO MEDIA QUERYS MODAL
 @media (min-width: 850px) {
   .modal-producto {
     .contenedor-modal-producto {
@@ -1139,7 +1459,6 @@ a {
     }
   }
 }
-
 @media (min-width: 1024px) {
   .modal-producto {
     .contenedor-img-modal {
@@ -1151,382 +1470,16 @@ a {
   }
 }
 
-//INICIO SECCION BREAK
-.break {
-  width: 100%;
-  max-width: 1700px;
-  @include flexbox(row, center, center);
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
-.descuentos {
-  position: relative;
-  height: 30vw; //para que crezca siempre a un tamaño proporcional al ancho de la pantalla
-  max-height: 220px;
-  min-height: 100px;
-  @include flexbox(row, center, center);
-  flex-basis: 100%;
-  margin: 15px;
-  background: rgb(255, 219, 219);
-}
-.texto-descuento {
-  width: 60%;
-  height: 70%;
-  @include flexbox(column, center, center);
-}
-.texto-descuento .mini-texto,
-.titulos-descuentos {
-  width: 100%;
-  height: 50%;
-  @include flexbox(row, flex-start, center);
-}
-.texto-descuento .mini-texto {
-  padding: 0 0 5px 10px;
-  letter-spacing: 0px;
-  font-size: clamp(0.8rem, 3vw, 1.5rem);
-  text-transform: capitalize;
-} //heredar las propiedades del mini texto del header y cambiarle las necesarias para adaptarla al texto descuento
-.titulos-descuentos {
-  text-align: flex-start;
-  padding-left: 10px;
-  color: var(--color-texto-principal);
-  font-family: var(--fuente-principal);
-  font-size: clamp(1.3rem, 6.2vw, 3rem);
-}
-
-.imagen-descuento {
-  z-index: 1; //PARA SUPERPONER LA IMG AL BORDE BLANCO DEL DESCUENTO NRO 2
-  width: 25%;
-  height: 90%;
-}
-
-.descuentos:nth-child(1) {
-  background: rgb(245, 245, 245);
-  .mini-texto {
-    padding: 0 0 0 12px;
-    align-items: flex-start;
-    letter-spacing: 0px;
-    font-size: clamp(0.8rem, 2.3vw, 1.5rem);
-    //para que la tipografia tambien crezca siempre a un tamaño proporcional al ancho de la pantalla
-  }
-  .titulos-descuentos {
-    padding-left: 10px;
-    align-items: flex-end;
-  }
-  //para reemplazar las propiedades de mini texto y titulos descuentos que ya aplicaban para los dos div descuentos
-}
-.descuentos:nth-child(2):after {
-  content: "";
-  position: absolute;
-  width: 90%;
-  height: 70%;
-  border: 1px solid rgb(255, 255, 255);
-}
-
-//INICIO MEDIA QUERYS SECCION BREAK
-@media (min-width: 950px) {
-  .descuentos {
-    flex-basis: 45%;
-    height: 18vw;
-  }
-  .titulos-descuentos {
-    font-size: clamp(1.3rem, 4vw, 3rem);
-  }
-  .texto-descuento .mini-texto {
-    font-size: clamp(0.8rem, 2vw, 1.5rem);
-    height: 40%;
-  }
-  .descuentos:nth-child(1) {
-    .mini-texto,
-    .titulos-descuentos {
-      padding-left: 0;
-    }
-    .mini-texto {
-      font-size: clamp(0.8rem, 1.7vw, 1.5rem);
-    }
-  }
-}
-
-//INICIO SECCION CATEGORIAS
-.contenedor-categorias {
-  max-width: 1800px;
-  margin: 0 auto 50px;
-  .titulos-secundarios {
-    width: 180px;
-    justify-content: flex-start;
-    margin-left: 10px;
-    font-size: 1.1rem;
-    letter-spacing: 0;
-  }
-  .columna-slider {
-    width: 100%;
-  }
-  .item-slider {
-    width: 95%;
-    max-width: 500px;
-    height: 40vw;
-    max-height: 200px;
-    @include flexbox(row, center, center);
-    margin: 15px auto 0 10px;
-    padding: 0;
-    box-shadow: none;
-  }
-  .swiper-button-next,
-  .swiper-button-next:after,
-  .swiper-button-prev:after,
-  .swiper-button-prev {
-    top: 35px;
-    right: 35px;
-    margin-top: 0;
-    margin-left: auto;
-    color: black;
-    font-size: 1.1rem;
-  }
-  .swiper-button-prev {
-    right: 70px;
-  }
-} //PARA REEMPLAZAR ALGUNAS PROPIEDADES DEL SWIPER ANTERIOR Y ADAPTARLO AL NUEVO
-
-.mas-vendidos,
-.mejores-reseñas,
-.nuevos-productos {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-}
-
-.img-productos-categorias {
-  width: 30%;
-  height: 100%;
-  background: #f5f5f5;
-}
-.descripcion-productos-categorias {
-  width: 66%;
-  height: 100%;
-  margin-left: auto;
-  padding-top: 0px;
-}
-
-.nombre-producto-categorias,
-.calificacion-producto-categorias,
-.precio-producto-categorias {
-  width: 100%;
-  height: 28%;
-  @include flexbox(row, flex-start, center);
-  color: var(--color-texto-principal);
-  font-family: var(--fuente-principal);
-  font-weight: 100;
-  font-size: clamp(1rem, 5vw, 1.2rem);
-  text-transform: capitalize;
-}
-.calificacion-producto-categorias {
-  color: var(--color-principal);
-  font-size: 0.8rem;
-  text-transform: capitalize;
-}
-.nuevos {
-  color: rgb(0, 224, 75);
-}
-.precio-producto-categorias {
-  font-size: clamp(1rem, 5vw, 1.3rem);
-}
-
-//INICIO MEDIA QUERYS SECCION CATEGORIAS
-@media (min-width: 850px) {
-  .contenedor-categorias {
-    display: flex;
-    .item-slider {
-      height: 12vw;
-      margin-bottom: 30px;
-    }
-  }
-  .nuevos-productos,
-  .mejores-reseñas,
-  .mas-vendidos {
-    width: 33.33333333%;
-  }
-}
-
-//INICIO SECCION FOOTER
-.footer-principal {
-  padding-top: 30px;
-  background: rgb(241, 241, 241);
-  .titulos-secundarios {
-    width: 100%;
-    height: 40px;
-    margin: 0;
-    justify-content: flex-start;
-    background: none;
-    font-size: 1.3rem;
-  } //clase reutilizada, display flex ya esta declarado
-}
-.logo-redes,
-.img-logo {
-  @include flexbox(column, center, center);
-}
-.logo-redes {
-  margin-bottom: 30px;
-}
-.logo-footer,
-.redes {
-  height: 80px;
-  @include flexbox(row, flex-start, center);
-}
-
-.logo-footer {
-  width: 300px;
-  margin-right: auto;
-}
-.img-logo {
-  width: 180px;
-  height: 60px;
-}
-.redes {
-  width: 100%;
-  i {
-    width: 32px;
-    height: 32px;
-    @include flexbox(row, center, center);
-    margin: 10px;
-    border: 1px solid rgb(196, 196, 196);
-    border-radius: 50%;
-    color: var(--color-texto-secundario);
-  }
-  i:nth-child(1) {
-    margin-left: 0;
-  }
-}
-
-.newsletter {
-  width: 100%;
-  max-width: 500px;
-  height: 100px;
-  @include flexbox(row, flex-start, flex-start);
-  flex-wrap: wrap;
-  margin-bottom: 30px;
-  .titulos-secundarios {
-    margin-bottom: -20px;
-  } //para acercar mas el titulo a la seccion correspondiente
-
-  .correo-newsletter {
-    width: 58%;
-    height: 35px;
-    margin-right: 5px;
-    border: 1px solid rgb(209, 209, 209);
-  }
-  .btn-principal {
-    width: 40%;
-    height: 35px;
-    padding: 4px 8px;
-    font-size: 0.7rem;
-    font-weight: bolder;
-  }
-}
-.contacto {
-  margin-bottom: 30px;
-  .titulos-secundarios {
-    margin-bottom: -20px;
-  }
-  ul {
-    width: 100%;
-    height: 200px;
-    @include flexbox(column, space-evenly, left);
-    list-style: none;
-  }
-  li {
-    width: 100%;
-    font-family: var(--fuente-principal);
-    font-size: 0.9rem;
-  }
-}
-
-.horarios {
-  width: 100%;
-  max-width: 500px;
-  margin-bottom: 90px;
-  ul {
-    width: 100%;
-    height: 100px;
-    list-style: none;
-  }
-  li {
-    width: 100%;
-    height: 40px;
-    @include flexbox(row, space-between, left);
-  }
-  li:nth-child(2) {
-    border-bottom: 1px solid rgb(226, 226, 226);
-    border-top: 1px solid rgb(226, 226, 226);
-  }
-  span {
-    @include flexbox(row, center, center);
-    text-transform: capitalize;
-    font-family: var(--fuente-principal);
-  }
-}
-.copy {
-  width: 100%;
-  color: white;
-  background: rgb(0, 0, 0);
-  font-family: var(--fuente-principal);
-  text-transform: capitalize;
-  font-size: 0.9rem;
-  .contenedor {
-    height: 50px;
-    @include flexbox(row, center, center);
-  }
-}
-
-//MEDIA QUERYS FOOTER
-
-@media (min-width: 850px) {
-  .footer-principal {
-    .contenedor {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 0 auto;
-    }
-    .logo-redes {
-      width: 50%;
-      flex-direction: row;
-      .logo-footer {
-        width: 250px;
-        margin-right: 20px;
-      }
-    }
-    .newsletter {
-      width: 50%;
-    }
-    .contacto {
-      width: 50%;
-    }
-    .horarios {
-      width: 50%;
-    }
-  }
-}
-
-.bg-black-desplazable {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  z-index: 9;
-  background: rgba(0, 0, 0, 0.404);
-  opacity: 0;
-}
-
 //CONTENEDOR DE LOS 4 DESPLEGABLES
 .desplazable-cart-search-fav-user {
   position: fixed;
   top: 0;
-  right: -100%; //para aniamr con gsap
+  right: -100%; //para animar con gsap
   z-index: 900;
   width: 88%;
   max-width: 500px;
   height: 100%;
-  opacity: 0; //para aniamr con gsap
+  opacity: 0; //para animar con gsap
 
   background: rgb(255, 255, 255);
   .btn-cerrar-desplazable {
@@ -1562,7 +1515,6 @@ a {
     }
   }
 }
-
 .barra-superior,
 .titulo-carrito,
 .btn-cerrar {
@@ -1663,7 +1615,6 @@ a {
     text-transform: capitalize;
     cursor: pointer;
   }
-
   //seccion-terminar-compra
   .terminar-compra {
     width: 100%;
@@ -1778,7 +1729,6 @@ a {
   background: rgb(241, 241, 241);
   font-size: 1.1rem;
 }
-
 .recuperar-contraseña,
 .crear-cuenta {
   width: 100%;
@@ -1794,6 +1744,7 @@ a {
   color: red;
   cursor: pointer;
 }
+//seccion registro
 .contenido-registro {
   width: 100%;
   padding: 25px 10px;
@@ -1809,7 +1760,6 @@ a {
 }
 
 //DESPLAZABLE SEARCH
-
 .desplazable-search {
   width: 0;
   height: 100%;
@@ -1873,7 +1823,6 @@ a {
 .descripcion-item {
   width: 50%;
 }
-
 .editar-item {
   width: 30%;
   height: 100%;
@@ -1884,6 +1833,7 @@ a {
   @include flexbox(column, space-evenly, center);
 }
 
+//MEDIA QUERYS 4 DESPLEGABLES
 @media (min-width: 1024px) {
   .desplazable-cart,
   .desplazable-user {

@@ -11,12 +11,13 @@ gsap.to(".btn-header", {
   opacity: 1,
   delay: 0.7,
 });
-
 gsap.to(".mini-texto", {
   duration: 1.6,
   opacity: 1,
   delay: 0.6,
 });
+
+//WINDOW ONLOAD PARA QUE TERMINE DE CARGAR EL CONTENIDO DE LA PAGINA ANTES DE APLICAR LO SIGUIENTE
 window.onload = () => {
   //SWIPER PARA EL HEADER
   var swiper = new Swiper(".swiper-container", {
@@ -67,7 +68,7 @@ window.onload = () => {
     },
   });
 
-  //EVENT LISTENERS DEL MENU PRINCIPAL DESPLEGABLE
+  //EVENT LISTENERS DE LOS DESPLEGABLES DE LA NAVEGACION PRINCIPAL
   (function () {
     const menuDesplegable = document.querySelector(".menu-desplegable");
     const menuHamburguesa = document.querySelector(".menu-hamburguesa");
@@ -105,7 +106,9 @@ window.onload = () => {
       });
     });
 
-    //EVENT LISTENERS BOTONES BARRA SUPERIOR
+    //EVENT LISTENERS DESPLEGABLE MOVIL
+
+    //BOTONES BARRA SUPERIOR
     const btnMenu = document.querySelector(".menu-global");
     const btnCategorias = document.querySelector(".menu-categorias");
     const contenidoGlobal = document.querySelector(
@@ -141,7 +144,7 @@ window.onload = () => {
       });
     });
 
-    //EVENT LISTENERS CATEGORIAS
+    //CATEGORIAS
     categoriasDesplegable.forEach((categoria) => {
       categoria.addEventListener("click", () => {
         gsap.to(menuDesplegable, {
@@ -158,7 +161,7 @@ window.onload = () => {
       });
     });
 
-    //INICIO SECCION FAVORITOS
+    //FAVORITOS
     const titulo = document.querySelector(".titulo-favoritos-movil");
     const contenedorFavoritos = document.querySelector(
       ".favoritos-menu-desplazable"

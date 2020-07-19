@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"
-      defer
-    ></script>
-    <script src="js/app.js" defer></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--SWIPER-->
@@ -24,6 +18,7 @@
     <title>eCommerce</title>
   </head>
   <body>
+    <!--INICIO NAVEGACION PRINCIPAL-->
     <nav class="nav-principal">
       <div class="superior contenedor">
         <div class="login">
@@ -66,7 +61,7 @@
                   class="contenido-fav favoritos-menu-desplazable"
                   style="top: -80px;"
                 >
-                  <!--LA SEGUNDA CLAZE PARA ANIMARLA CON GSAP SIN QUE INTERVENGA LA PRIMERA, Y EL ESTILO INLINE PARA QUE FUNCIONE LA ANIMACION GSAP-->
+                  <!--LA SEGUNDA CLAsE PARA ANIMARLA CON GSAP SIN QUE INTERVENGA LA PRIMERA, Y EL ESTILO INLINE PARA QUE FUNCIONE LA ANIMACION GSAP-->
                   <div class="ejemplo-item item-fav">
                     <!--SEGUNDA CLASE PARA USARLA CON EL BOTON REMOVER CON JS-->
                     <div class="img-item">
@@ -301,9 +296,9 @@
           </div>
         </div>
       </div>
-      <!-- Add Pagination -->
+      <!-- PAGINACION SWIPER -->
       <div class="swiper-pagination swiper-pagination-white"></div>
-      <!-- Add Arrows -->
+      <!-- FLECHA SWIPER -->
       <div class="swiper-button-next swiper-button-white btn-header-next"></div>
       <div class="swiper-button-prev swiper-button-white btn-header-prev"></div>
     </header>
@@ -568,7 +563,7 @@
       <h2 class="titulos-secundarios titulo-hombre">hombre</h2>
       <span class="linea-separadora"></span>
       <div class="contenido-mujer-hombre contenido-hombre">
-        <!--AGREGADA LA CLASE CONTENIDO HOMBRE PARA PODER APLICARLE LA PROPIEDAD ROW-REVERSE-->
+        <!--AGREGADA LA CLASE CONTENIDO-HOMBRE PARA PODER APLICARLE LA PROPIEDAD ROW-REVERSE-->
         <div class="hero-compras">
           <img
             src="./images/portada-hombre-mujer/categoria-hombre.webp"
@@ -1194,6 +1189,7 @@
         </div>
       </div>
     </section>
+    <!--INICIO SECCION FOOTER-->
     <footer class="footer-principal">
       <div class="contenedor">
         <div class="logo-redes">
@@ -1247,13 +1243,14 @@
         </div>
       </div>
     </footer>
-
     <!--MENUS/POP-UPS OCULTOS-->
     <div class="bg-black-desplazable"></div>
+    <!--PARA OSCURECER EL BODY AL ABRIR ALGUN DESPLEGABLE-->
     <div class="desplazable-cart-search-fav-user">
       <div class="btn-cerrar-desplazable">
         <i class="fas fa-arrow-right"></i>
       </div>
+      <!--SECCION CARRITO DESPLEGABLE-->
       <div class="desplazable-cart">
         <div class="barra-superior">
           <h3 class="titulo-carrito">tus productos</h3>
@@ -1299,6 +1296,7 @@
           </div>
         </div>
       </div>
+      <!--SECCION USUARIO DESPLEGABLE-->
       <div class="desplazable-user">
         <div class="barra-superior">
           <h2 class="titulo-logueo">ingresar</h2>
@@ -1334,6 +1332,7 @@
           </p>
         </div>
       </div>
+      <!--SECCION BUSCAR DESPLEGABLE-->
       <div class="desplazable-search">
         <div class="contenido-search">
           <input
@@ -1346,6 +1345,7 @@
           <i class="fas fa-search icono-search"></i>
         </div>
       </div>
+      <!--SECCION FAVORITOS DESPLEGABLE-->
       <div class="desplazable-fav">
         <div class="barra-superior">
           <h3 class="titulo-favoritos">tus favoritos</h3>
@@ -1395,7 +1395,7 @@
         </div>
       </div>
     </div>
-
+    <!--INICIO DE MODAL(POP-UP AL HACER CLICK EN ALGUN PRODUCTO)-->
     <div class="modal-producto">
       <div class="contenedor-modal-producto">
         <div class="btn-cerrar-modal">
@@ -1473,7 +1473,12 @@
         </div>
       </div>
     </div>
-
-    <!--RULEPLUGIN PARA PODER ANIMAR PSEUDOELEMENTOS-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"
+      defer
+    ></script>
+    <script src="js/app.js" defer></script>
+    <!--SCRIPT CON DEFER PARA PROBAR LA PROPIEDAD-->
   </body>
 </html>
