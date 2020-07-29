@@ -1282,6 +1282,12 @@ a {
       flex-basis: 100%;
   margin: 15px;
   background: #ffdbdb;
+  cursor: pointer;
+}
+
+.descuentos:hover .imagen-descuento {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .texto-descuento {
@@ -1340,6 +1346,8 @@ a {
   z-index: 1;
   width: 25%;
   height: 90%;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .descuentos:nth-child(1) {
@@ -1412,6 +1420,7 @@ a {
 }
 
 .contenedor-categorias .item-slider {
+  cursor: pointer;
   width: 95%;
   max-width: 500px;
   height: 40vw;
@@ -1459,10 +1468,21 @@ a {
   width: 100%;
 }
 
+.item-slider:hover .img-productos-categorias img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .img-productos-categorias {
   width: 30%;
   height: 100%;
   background: #f5f5f5;
+  overflow: hidden;
+}
+
+.img-productos-categorias img {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .descripcion-productos-categorias {
@@ -1591,6 +1611,7 @@ a {
 .img-logo {
   width: 180px;
   height: 60px;
+  cursor: pointer;
 }
 
 .redes {
@@ -1617,6 +1638,13 @@ a {
   border: 1px solid #c4c4c4;
   border-radius: 50%;
   color: var(--color-texto-secundario);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.redes i:hover {
+  border: 1px solid var(--color-principal);
 }
 
 .redes i:nth-child(1) {
@@ -1653,6 +1681,7 @@ a {
   width: 58%;
   height: 35px;
   margin-right: 5px;
+  padding: 0 15px;
   border: 1px solid #d1d1d1;
 }
 

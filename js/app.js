@@ -305,6 +305,7 @@ window.onload = () => {
     //FUNCIONES PARA ABRIR Y CERRAR CADA UNO DE LOS DESPLAZABLES
     const abrirDesplazable = (contenedorPadre, contenedorTarget) => {
       gsap.to(contenedorPadre, {
+        duration: 0.5,
         right: 0,
         opacity: 1,
       });
@@ -313,7 +314,7 @@ window.onload = () => {
         width: "100%",
       });
       gsap.to(contenedorTarget, {
-        delay: 0.8,
+        delay: 0.4,
         opacity: 1,
       });
       gsap.to(bgOscuro, {
@@ -326,11 +327,12 @@ window.onload = () => {
     };
     const CerrarDesplazable = (contenedorPadre, contenedorTarget) => {
       gsap.to(contenedorPadre, {
+        duration: 0.5,
         right: "-100%",
         opacity: 0,
       });
       gsap.to(contenedorTarget, {
-        delay: 0.7,
+        delay: 0.4,
         display: "none",
         width: 0,
       });
